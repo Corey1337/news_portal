@@ -1,3 +1,7 @@
+<?php
+    session_start();
+    require "server/config.php";
+?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -15,7 +19,20 @@
         <h3 class="mb-5">Актуальные новости</h3>
 
 
-        <button type="button" class="btn btn-dark mb-5" onclick="document.location='newsform.php'">Добавить новость</button>
+        <?php
+        //print $_SESSION['root'];
+        if(isset($_SESSION['id']))
+        {
+            
+            if($_SESSION['root']==1)
+            {
+            ?>
+                    <button type="button" class="btn btn-dark mb-5" onclick="document.location='newsform.php'">Добавить новость</button>
+
+                <?php
+            }
+                
+        }?>
         <!-- к этой кнопеке надо прикрутить проверку на админа хз как -->
 
 

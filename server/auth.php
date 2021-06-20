@@ -12,12 +12,16 @@ if(!isset($_SESSION['id']))
 
         //print $login." ".$password;
 
-        $query=mysqli_query($db, "SELECT * FROM `users_attribute` WHERE `email`='$login' AND `password`='$password'");
+        $query=mysqli_query($db, "SELECT * FROM `users_attribute` WHERE `email`='$login' AND `password`='$password' ");
 
         if(mysqli_num_rows($query)>0)
         {
             $user=mysqli_fetch_assoc($query);
             $id=$user['id'];
+            $root=$user['root'];
+            $_SESSION['password']=$password;
+            $_SESSION['email']=$login;
+            $_SESSION['root']=$root;
             $_SESSION['id']=$id;
             //на главную страницу, если вход успешен
             header("Location: /index.php");
