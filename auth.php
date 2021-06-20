@@ -9,7 +9,7 @@ if(!isset($_SESSION['id']))
 
     <html>
     <head>
-        <title>Autorization</title>
+        <title>RABOTAET</title>
     </head>
     <body>
     <h1>SIGN IN</h1>
