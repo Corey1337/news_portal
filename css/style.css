@@ -2,13 +2,3 @@
     width: 32%;
     margin-left: 1%;
 }
-
-form {
-    /* Расположим форму по центру страницы */
-    margin: 0 auto;
-    width: 400px;
-    /* Определим контур формы */
-    padding: 1em;
-    border: 1px solid #CCC;
-    border-radius: 1em;
-  }
