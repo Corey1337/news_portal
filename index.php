@@ -20,6 +20,7 @@
 
 
         <?php
+        print $user['root'];
         //print $_SESSION['root'];
         if(isset($_SESSION['id']))
         {

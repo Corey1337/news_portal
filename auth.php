@@ -18,6 +18,10 @@ if(!isset($_SESSION['id']))
             <input type="password" name="password" placeholder="Password" /><br />
             <input type="submit" name="sub" value="Enter" />
         </form>
+        Если вы ещё не зарегистрированны на нашем сайте, то перейдите по ссылке ниже и заполните форму
+        </br>
+        </br>
+        <button type="button" class="newnews btn btn-dark mb-5" onclick="document.location='registration.php'">Регистрация</button>
     </body>
     </html>
 
