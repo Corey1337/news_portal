@@ -9,6 +9,19 @@
                 <a class="me-3 py-2 text-dark text-decoration-none" href="index.php">Главная</a>
                 <a class="me-3 py-2 text-dark text-decoration-none" href="contact.php">Контакты</a>
             </nav>
-                <a class="btn btn-outline_primary" href="#">Вход/Регистрация</a>
+                <?php
+                if(isset($_SESSION['id']))
+                {
+                    ?>
+                    <a class="btn btn-outline_primary" href="redirect.php">Вход/Регистрация</a>
+                    <?php
+                }
+                else
+                {
+                    ?>
+                    <a class="btn btn-outline_primary" href="#">Личный кабинет</a>
+                    <?php
+                }
+                ?>
         </div>
     </div>

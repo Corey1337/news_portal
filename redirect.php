@@ -1,4 +1,3 @@
-
 <?php
     //проверка базы данных на подключение, если не подключена, то можно убрать
     
@@ -9,7 +8,7 @@
 
     if(isset($_SESSION['id']))
     {
-        header("Location:/index.php");
+        header("Location:index.php");
     }
     else
     {
