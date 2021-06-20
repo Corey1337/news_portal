@@ -2,7 +2,7 @@
 
 //вместо localhost нужно будет подставить IP сервера, если будем его подключать, он будет дан самим хостером
 //далее 'имя пользователя дб' 'пароль' 'название дб'
-$db = mysqli_connect('localhost','root','root','list_of_users');
+$db = mysqli_connect('localhost:3307','root','root','list_of_users');
 
 $site_url="http:localhost";
 

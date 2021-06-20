@@ -10,13 +10,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>Best news</title>
+    <title>News Today</title>
 </head>
 <body>
     <?php require "blocks/header.php" ?>
 
     <div class="container mt-5">
-        <h3 class="mb-5">Актуальные новости</h3>
+        <h3 class="newnews mb-5">Актуальные новости</h3>
 
 
         <?php
@@ -27,7 +27,7 @@
             if($_SESSION['root']==1)
             {
             ?>
-                    <button type="button" class="btn btn-dark mb-5" onclick="document.location='newsform.php'">Добавить новость</button>
+                    <button type="button" class="newnews btn btn-dark mb-5" onclick="document.location='newsform.php'">Добавить новость</button>
 
                 <?php
             }
@@ -38,7 +38,7 @@
 
         <div class="d-flex flex-wrap">
             <?php
-                for($i = 0; $i < 3; $i++):
+                for($i = 0; $i < 4; $i++):
             ?>
             <div class="card mb-4 rounded-3 shadow-sm">
                 <div class="card-header py-3">
