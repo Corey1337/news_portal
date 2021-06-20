@@ -13,6 +13,12 @@
 
     <div class="container mt-5">
         <h3 class="mb-5">Актуальные новости</h3>
+
+
+        <button type="button" class="btn btn-dark mb-5" onclick="document.location='newsform.php'">Добавить новость</button>
+        <!-- к этой кнопеке надо прикрутить проверку на админа хз как -->
+
+
         <div class="d-flex flex-wrap">
             <?php
                 for($i = 0; $i < 3; $i++):
