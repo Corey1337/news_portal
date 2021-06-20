@@ -10,7 +10,7 @@
                 <a class="me-3 py-2 text-dark text-decoration-none" href="contact.php">Контакты</a>
             </nav>
                 <?php
-                if(isset($_SESSION['id']))
+                if(!isset($_SESSION['id']))
                 {
                     ?>
                     <a class="btn btn-outline_primary" href="redirect.php">Вход/Регистрация</a>
@@ -20,6 +20,7 @@
                 {
                     ?>
                     <a class="btn btn-outline_primary" href="#">Личный кабинет</a>
+                    <a class="btn btn-outline_primary" href="/Exit.php">Выход</a>
                     <?php
                 }
                 ?>
