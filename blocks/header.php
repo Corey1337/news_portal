@@ -22,7 +22,7 @@
                 else
                 {
                     ?>
-                    <a class="btn btn-outline_primary" href="#">Личный кабинет</a>
+                    <a class="btn btn-outline_primary" href="personal_area.php">Личный кабинет</a>
                     <a class="btn btn-outline_primary" href="/Exit.php">Выход</a>
                     <?php
                 }

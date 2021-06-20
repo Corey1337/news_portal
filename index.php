@@ -38,7 +38,7 @@
 
         <div class="d-flex flex-wrap">
             <?php
-                for($i = 0; $i < 3; $i++):
+                for($i = 0; $i < 4; $i++):
             ?>
             <div class="card mb-4 rounded-3 shadow-sm">
                 <div class="card-header py-3">
