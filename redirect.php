@@ -1,0 +1,18 @@
+
+<?php
+    //проверка базы данных на подключение, если не подключена, то можно убрать
+    
+    session_start();
+    
+    require "server/config.php";
+
+
+    if(isset($_SESSION['id']))
+    {
+        header("Location:/index.php");
+    }
+    else
+    {
+        header("Location:auth.php");
+    }
+?>
