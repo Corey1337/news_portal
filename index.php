@@ -38,7 +38,7 @@
                  <?php endfor ?>
         </div>
     </div>
-
+<!-- test -->
     <?php require "blocks/footer.php" ?>
 </body>
 </html>
