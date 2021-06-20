@@ -59,4 +59,9 @@
                 header("Location: index.php");    
             }
                 
-        }?><!DOCTYPE html>
+        }
+        else
+        {
+            header("Location: index.php");    
+        }
+        ?><!DOCTYPE html>
