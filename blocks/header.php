@@ -16,14 +16,14 @@
                 if(!isset($_SESSION['id']))
                 {
                     ?>
-                    <a class="btn btn-outline_primary" href="redirect.php">Вход/Регистрация</a>
+                    <a class="btn btn-outline-primary" href="redirect.php">Вход/Регистрация</a>
                     <?php
                 }
                 else
                 {
                     ?>
-                    <a class="btn btn-outline_primary" href="personal_area.php">Личный кабинет</a>
-                    <a class="btn btn-outline_primary" href="/Exit.php">Выход</a>
+                    <a class="me-3 py-2 text-dark text-decoration-none" href="personal_area.php">Личный кабинет</a>
+                    <a class="btn btn-outline-primary" href="/Exit.php">Выход</a>
                     <?php
                 }
                 ?>

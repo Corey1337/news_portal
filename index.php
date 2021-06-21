@@ -50,7 +50,7 @@
                     <div>
                         <h5>Тут всякой текстик</h5>
                     </div>
-                    <button type="button" class="w-100 btn btn-lg btn-outline-primary">Подробнее</button>
+                    <button type="button" class="w-100 btn btn-lg btn-outline-primary" onclick="document.location='article.php'">Подробнее</button>
                 </div>
             </div>
                  <?php endfor ?>
