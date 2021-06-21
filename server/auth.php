@@ -28,7 +28,6 @@ if(!isset($_SESSION['id']))
         }
         else
         {
-            
             print "Login or password are incorrect, try again! <br/>";
             print "<a href= /index.php>Back</a>";
         }
