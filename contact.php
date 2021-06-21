@@ -21,6 +21,8 @@
         </div>
     </div>
 
-    <?php require "blocks/footer.php" ?>
+    <footer class="container mt-5 border-top pt-4 text-center">
+            <p>NewsToday, Inc. 2021 ©</p>
+    </footer>
 </body>
 </html>
