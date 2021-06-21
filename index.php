@@ -20,8 +20,13 @@
 
 
         <?php
-        print $user['root'];
+
         //print $_SESSION['root'];
+        //print $_SESSION['password'];
+        //print $_SESSION['login'];
+        //print $_SESSION['email'];
+        //print $_SESSION['id'];
+
         if(isset($_SESSION['id']))
         {
             
