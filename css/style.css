@@ -24,3 +24,8 @@
 .col {
     margin-left: 1%;
 }
+
+.vertical-center {
+    display: flex;
+    align-items: center;
+  }
