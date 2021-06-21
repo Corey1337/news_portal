@@ -22,7 +22,7 @@
             <div class="text-center">
             
                 <form method="post" action="server/auth.php" class="form-signin">
-                    <a href="/" class="align-items-center text-dark text-decoration-none">
+                    <a href="index.php" class="align-items-center text-dark text-decoration-none">
                         <img src="img/upd_2_logo.png" wight="100" height="100" class="mt-5"></img>
                     </a>
                     <h1 class="h3 mb-3 font-weight-normal">Войдите в ваш аккаунт</h1>
