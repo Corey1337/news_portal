@@ -10,7 +10,6 @@ $(function() {
         if(pathname_url == link || href_url == link) {
             
             $(this).addClass('active');
-            
         }
     });
 });
