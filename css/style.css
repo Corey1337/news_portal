@@ -17,3 +17,6 @@
     padding: 15px;
     margin: 0 auto;
 }
+.menu a.active {
+    color: #007bff!important;
+}
