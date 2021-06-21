@@ -8,7 +8,7 @@
         <a class="text-dark text-decoration-none" href="account_set.php">Настройки аккаунта</a>
     </div>
     <div class="col">
-        <a class="text-dark text-decoration-none" href="support.php">Поддержка</a>
+        <a class="text-dark text-decoration-none" href="../contact.php">Поддержка</a>
     </div>
     
 </div>

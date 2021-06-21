@@ -14,14 +14,14 @@
 
     <div class="menu container mt-5 justify-content-md-center text-center">
         <?php require "pa_blocks/pa_header.php" ?>
-        <div class="row mt-5">
+        <div class="row mt-5 ">
             <div class="col rounded border bg-light border-2">
                 Сменить аватарку
                 <form class="mt-2" action="" method="post">
                     <img src="../img/upload_def_icon.jpg" class="rounded-circle img-thumbnail" width="200">
                     <input class="mt-2" type="file" name="image">
                     <div class="d-grid">
-                        <button type="submit" class="btn btn-primary mt-2 mb-2">Изменить</button>
+                        <button type="submit" class="btn btn-primary mt-2 mb-2">Изменить аватарку</button>
                     </div>
                 </form>
             </div>
@@ -32,7 +32,7 @@
                     <h3 class="mt-4">Corey</h3>
                     <input class="form-control mt-5 mb-2" type="text" name="login" placeholder="Новое имя"/>
                     <div class="d-grid">
-                        <button type="submit" class=" btn btn-primary mt-4 mb-2">Изменить</button>
+                        <button type="submit" class=" btn btn-primary mt-4 mb-2">Изменить имя</button>
                     </div>
                 </form>
                 
@@ -41,7 +41,12 @@
             <div class="col rounded border bg-light border-2">
                 Сменить пароль
                 <form action="" method="post">
-                    
+                <input class="form-control mt-5" type="text" name="cur_password" placeholder="Введите старый пароль"/>
+                <input class="form-control mt-4" type="text" name="new_password" placeholder="Новый пароль"/>
+                <input class="form-control mt-4 mb-3" type="text" name="new_password" placeholder="Повторите пароль"/>
+                    <div class="d-grid">
+                        <button type="submit" class=" btn btn-primary mt-4 mb-2">Изменить пароль</button>
+                    </div>
                 </form>
             </div>
         </div>
