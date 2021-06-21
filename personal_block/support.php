@@ -20,6 +20,6 @@
     </div>
     
 
-    <?php require "../blocks/footer.php" ?>
+    <?php require "../blocks/footer-min.php" ?>
 </body>
 </html>

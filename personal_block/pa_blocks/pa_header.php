@@ -10,4 +10,5 @@
     <div class="col">
         <a class="text-dark text-decoration-none" href="support.php">Поддержка</a>
     </div>
+    
 </div>

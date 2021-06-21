@@ -19,10 +19,10 @@
                 Аватарка
             </div>
             <div class="col">
-                Имя пользователя
+                Имя
             </div>
             <div class="col">
-                Логин
+                Почта
             </div>
             <div class="w-100 mt-2"></div>
             <div class="col mb-2">
@@ -34,13 +34,13 @@
                 <!-- Тут отображается Никнейм -->
             </div>
             <div class="col">
-                Login
+                e-mail
                 <!-- Тут отображается логин -->
             </div>
         </div>
     </div>
     
 
-    <?php require "../blocks/footer.php" ?>
+    <?php require "../blocks/footer-min.php" ?>
 </body>
 </html>

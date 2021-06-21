@@ -20,3 +20,7 @@
 .menu a.active {
     color: #007bff!important;
 }
+
+.col {
+    margin-left: 1%;
+}

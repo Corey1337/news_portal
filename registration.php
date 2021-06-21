@@ -27,7 +27,7 @@
                     </a>
                     <h1 class="h3 mb-3 font-weight-normal">Регистрация</h1>
                     <input class="form-control mb-1" type="text" name="email" placeholder="Почта"/>
-                    <input class="form-control mb-1" type="text" name="login" placeholder="Логин"/>
+                    <input class="form-control mb-1" type="text" name="login" placeholder="Имя"/>
                     <input class="form-control mb-1" type="password" name="password" placeholder="Пароль"/>
                     <input class="form-control btn-primary" type="submit" name="sub" value="Зарегистрироваться" />
                 </form>
