@@ -18,7 +18,7 @@
                 if(!isset($_SESSION['id']))
                 {
                     ?>
-                    <a class="btn btn-outline-primary" href="/redirect.php">Вход/Регистрация</a>
+                    <a class="btn btn-outline-secondary" href="/redirect.php">Вход/Регистрация</a>
                     <?php
                 }
                 else
