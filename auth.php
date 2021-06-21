@@ -41,7 +41,7 @@
     }
     else
     {
-        header("Location:".$site_url);
+        header("Location:index.php");
     }
 
 ?>
