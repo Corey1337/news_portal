@@ -24,7 +24,7 @@
                 else
                 {
                     ?>
-                    <a class="me-3 py-2 text-dark text-decoration-none" href="/personal_block/index.php">Личный кабинет</a>
+                    <a class="me-3 py-2 text-dark text-decoration-none" href="/personal_block/personal_area.php">Личный кабинет</a>
                     <a class="btn btn-outline-danger" href="/exit.php">Выход</a>
                     <?php
                 }

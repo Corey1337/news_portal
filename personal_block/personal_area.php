@@ -13,7 +13,7 @@
     <?php require "../blocks/header.php" ?>
 
     <div class="menu container mt-5 justify-content-md-center text-center">
-        <?php require "blocks/header.php" ?>
+        <?php require "pa_blocks/pa_header.php" ?>
         <div class="row mt-5 rounded border bg-light border-2">
             <div class="col">
                 Аватарка
