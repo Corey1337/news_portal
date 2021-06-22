@@ -23,7 +23,7 @@ if($_SESSION['root']==1)
 
         <div class="menu container mt-5 justify-content-md-center text-center">
             <?php require "pa_blocks/pa_header.php" ?>
-            <div class="row mt-5 rounded border bg-light border-2">
+            <div class="users_list row mt-5 rounded border bg-light border-2">
                 <h3 class="h4">Список пользователей</h3>
                 <div>
                     <form action="" method="post" class="users_search">
