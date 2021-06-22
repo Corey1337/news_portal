@@ -10,7 +10,7 @@ require "../server/config.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
-
+    <script src="../js/show_pass.js"></script>
     <title>News Today</title>
 </head>
 <body>
@@ -58,9 +58,18 @@ require "../server/config.php";
             <div class="form-control col rounded border bg-light border-2 pa-col">
                 Сменить пароль
                 <form action="/server/change_password.php" method="post">
-                <input class="form-control mt-5" type="text" name="cur_password" placeholder="Введите старый пароль" required=""/>
-                <input class="form-control mt-4" type="text" name="new_password" placeholder="Новый пароль" required=""/>
-                <input class="form-control mt-4 mb-3" type="text" name="new_password_check" placeholder="Повторите пароль" required=""/>
+                <div class="password">
+                    <input id="password-input" class="form-control mt-5" type="password" name="cur_password" placeholder="Введите старый пароль" required=""/>
+                    <a href="#" class="password-control" onclick="return show_hide_password(this);"></a>
+                </div>
+                <div class="password">
+                    <input id="password-input" class="form-control mt-4" type="password" name="new_password" placeholder="Новый пароль" required=""/>
+                    <!-- <a href="#" class="password-control" onclick="return show_hide_password(this);"></a> -->
+                </div>
+                <div class="password">
+                    <input id="password-input" class="form-control mt-4 mb-3" type="password" name="new_password_check" placeholder="Повторите пароль" required=""/>
+                    <!-- <a href="#" class="password-control" onclick="return show_hide_password(this);"></a> -->
+                </div>
                     <div class="card-body d-flex flex-column">
                         <button type="submit" name="sub" class="align-self-end btn btn-primary mt-auto">Изменить пароль</button>
                     </div>

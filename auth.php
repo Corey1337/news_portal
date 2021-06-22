@@ -15,7 +15,7 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link rel="stylesheet" href="css/style.css">
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
-
+            <script src="../js/show_pass.js"></script>
             <title>Вход</title>
         </head>
         <body>
@@ -28,7 +28,10 @@
                     </a>
                     <h1 class="h3 mb-3 font-weight-normal">Войдите в ваш аккаунт</h1>
                     <input class="form-control mb-1" type="text" name="email" placeholder="Почта" required=""/>
-                    <input class="form-control mb-1" type="password" name="password" placeholder="Пароль" required=""/>
+                    <div class="password">
+                        <input id="password-input" class="form-control mb-1" type="password" name="password" placeholder="Пароль" required=""/>
+                        <a href="#" class="password-control" onclick="return show_hide_password(this);"></a>
+                    </div>
                     <input class="form-control btn-primary" type="submit" name="sub" value="Войти" />
                 </form>
                 <p class="text-center">Ещё не успели зарегестрироваться? Тогда сделайте это прямо сейчас</p>
