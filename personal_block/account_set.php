@@ -22,7 +22,20 @@ require "../server/config.php";
             <div class="form-control col first-col rounded border bg-light border-2 pa-col">
                 Сменить аватарку
                 <form class="mt-2" action="" method="post">
-                    <img src="../img/upload_def_icon.jpg" class="user-img rounded-circle img-thumbnail" width="200">
+                    <?php
+                    if ($_SESSION['img'] == '')
+                    {
+                        ?>
+                        <img src="../img/upload_def_icon.jpg" class="user-img rounded-circle img-thumbnail" width="200">
+                        <?php
+                    }
+                    else
+                    {
+                        ?>
+                        <img src="../<?php echo $_SESSION['img']; ?>" class="user-img rounded-circle img-thumbnail" width="200">
+                        <?php
+                    }
+                    ?>
                     <input class="mt-2" type="file" name="image" required="">
                     <div class="card-body d-flex flex-column">
                         <button type="submit" class="align-self-end btn btn-primary mt-auto ">Изменить аватарку</button>
