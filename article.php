@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-    <title>Best news</title>
+    <title>News Today</title>
 </head>
 <body>
     <?php require "blocks/header.php" ?>
@@ -40,21 +40,21 @@
     	<div class="row">
             <div class="col-sm-8">   
                 <form>
-                	<h3 class="pull-left">New Comment</h3>
-                	<button type="submit" class="btn btn-primary pull-right">Submit</button>
+                	<h3 class="pull-left">Новый коментарий</h3>
+                	<button type="submit" class="btn btn-primary pull-right">Отправить</button>
                     <fieldset>
                         <div class="row">
                             <div class="col-sm-3 col-lg-2 hidden-xs">
                             	<img class="media-object img-responsive rounded-circle img-thumbnail" src="https://bootdey.com/img/Content/avatar/avatar1.png" width="100">
                             </div>
                             <div class="form-group col-xs-12 col-sm-9 col-lg-10">
-                                <textarea class="form-control" id="message" placeholder="Your message" required=""></textarea>
+                                <textarea class="form-control" id="message" placeholder="Ваше сообщение" required=""></textarea>
                             </div>
                         </div>  	   
                     </fieldset>
                 </form>
                 
-                <h3>2 Comments</h3>
+                <h3>2 Коментария</h3>
                 <!-- количество коментов, можно есчо просто удалить -->
 
                 <!-- COMMENT 1 - START -->
