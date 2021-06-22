@@ -44,7 +44,7 @@ if(!isset($_SESSION['id']))
         }
 
         // если такого нет, то сохраняем данные
-        $result2 = mysqli_query ($db,"INSERT INTO `users_attribute` (`root`,`email`,`login`,`password`) VALUES(0,'$email','$login','$password')");
+        $result2 = mysqli_query ($db,"INSERT INTO `users_attribute` (`root`,`email`,`login`,`password`,`img`) VALUES(0,'$email','$login','$password','')");
         // Проверяем, есть ли ошибки
         if ($result2=='TRUE')
         {
