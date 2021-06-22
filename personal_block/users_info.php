@@ -28,11 +28,11 @@ if($_SESSION['root']==1)
                 <div>
                     <form action="" method="post" class="users_search">
                         <input type="text" name="user" class="form-control d-inline" required="" placeholder="Поиск по ключевому слову">
-                        <input type="submit" name="user_search" class="mt-2 d-inline btn btn-primary" value="Искать"/>
+                        <input type="submit" name="user_search" class="form-control mt-2 d-inline btn btn-primary" value="Искать"/>
                     </form>
                     <!-- ПОИСК ПОЛЬЗОВАТЕЛЯ -->
                 </div>
-                <div class="row mt-4">
+                <div class="row mt-2">
                     <div class="col">
                         Имя
                     </div>
