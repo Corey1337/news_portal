@@ -44,10 +44,10 @@ require "../server/config.php";
             </div>
             <div class="form-control col rounded border bg-light border-2 pa-col">
                 Сменить пароль
-                <form action="" method="post">
+                <form action="/server/change_password.php" method="post">
                 <input class="form-control mt-5" type="text" name="cur_password" placeholder="Введите старый пароль" required=""/>
                 <input class="form-control mt-4" type="text" name="new_password" placeholder="Новый пароль" required=""/>
-                <input class="form-control mt-4 mb-3" type="text" name="new_password" placeholder="Повторите пароль" required=""/>
+                <input class="form-control mt-4 mb-3" type="text" name="new_password_check" placeholder="Повторите пароль" required=""/>
                     <div class="card-body d-flex flex-column">
                         <button type="submit" name="sub" class="align-self-end btn btn-primary mt-auto">Изменить пароль</button>
                     </div>
