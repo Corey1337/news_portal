@@ -14,7 +14,10 @@ if(isset($_SESSION['id']))
         //print $email." ".$password;
         if ($new_login==$_SESSION['login'])
         {
-            exit( "Введённый вами логин совпадает с нынешним <br/>". "<a href= /personal_block/account_set.php>Back</a>");
+
+            
+            exit( "Введённый вами логин совпадает с нынешним <br/>". "<a href= /personal_block/personal_area.php>Back</a>");
+
         }
         if (empty($new_login)) //если пользователь не ввел логин, то выдаем ошибку и останавливаем скрипт
             {
