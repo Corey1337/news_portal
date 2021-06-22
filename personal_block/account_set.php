@@ -21,7 +21,7 @@ require "../server/config.php";
         <div class="row mt-5">
             <div class="form-control col first-col rounded border bg-light border-2 pa-col">
                 Сменить аватарку
-                <form class="mt-2" action="/server/change_img.php" method="post">
+                <form enctype="multipart/form-data" class="mt-2" action="/server/set_avatar.php" method="post">
                     <?php
                     if ($_SESSION['img'] == '')
                     {
@@ -36,7 +36,7 @@ require "../server/config.php";
                         <?php
                     }
                     ?>
-                    <input class="mt-2" type="file" name="image" required="">
+                    <input class="mt-2" type="file" name="file" required="">
                     <div class="card-body d-flex flex-column">
                         <button type="submit" name="sub" class="align-self-end btn btn-primary mt-auto ">Изменить аватарку</button>
                     </div>
