@@ -44,6 +44,7 @@ if($_SESSION['root']==1)
                 $result = $db->query('SELECT * FROM `users_attribute`');
                 while($row = $result->fetch_assoc())
                 {
+                $value=$row['email'];
                 ?>
                 <div class="row mt-4 vertical-center">
                     <div class="col">
@@ -90,25 +91,38 @@ if($_SESSION['root']==1)
                             if($row['root']==1 or $row['root']==0)
                             {
                                 ?>
-                                <button type="" class="btn btn-danger">Бан</button>
+                                <form style="display:inline-block" method="post" action="/server/privilege.php">
+                                    <input type="hidden" name="email" value="<?php echo $value; ?>" />
+                                    <input type="submit" name="ban" class="btn btn-danger" value="Бан" />
+                                </form>
                                 <?php
                             }
                             else
                             {
                                 ?>
-                                <button type="" class="btn btn-success">Разбан</button>
+                                <form style="display:inline-block" method="post" action="/server/privilege.php">
+                                    <input type="hidden" name="email" value="<?php echo $value; ?>" />
+                                    <input type="submit" name="unban" class="btn btn-success" value="Разбан" />
+                                </form>
                                 <?php
+                                
                             }
                             if($row['root']==1)
                             {
                                 ?>
-                                <button type="" class="btn btn-secondary">Сделать пользователем</button>
+                                <form style="display:inline-block" method="post" action="/server/privilege.php">
+                                    <input type="hidden" name="email" value="<?php echo $value; ?>" />
+                                    <input type="submit" name="set_user" class="btn btn-secondary" value="Сделать пользователем" />
+                                </form>
                                 <?php
                             }
                             else
                             {
                                 ?>
-                                <button type="" class="btn btn-info">Сделать админом</button>
+                                <form style="display:inline-block" method="post" action="/server/privilege.php">
+                                    <input type="hidden" name="email" value="<?php echo $value; ?>" />
+                                    <input type="submit" name="set_admin" class="btn btn-info" value="Сделать админом" />
+                                </form>
                                 <?php
                             }
                         }
