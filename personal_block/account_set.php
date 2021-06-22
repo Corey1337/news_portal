@@ -29,7 +29,7 @@
                 Сменить имя
                 <form action="" method="post">
                     <h3 class="h4 mt-5">Ваше текущее имя</h3>
-                    <h3 class="mt-4">Corey</h3>
+                    <h3 class="mt-4"><?php print $_SESSION['login']?></h3>
                     <input class="form-control mt-5 mb-2" type="text" name="login" placeholder="Новое имя"/>
                     <div class="d-grid">
                         <button type="submit" class=" btn btn-primary mt-4 mb-2">Изменить имя</button>

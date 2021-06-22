@@ -1,3 +1,7 @@
+<?php 
+session_start();
+require "../server/config.php";
+?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -26,15 +30,32 @@
             </div>
             <div class="w-100 mt-2"></div>
             <div class="col mb-2">
+                <?php
+                if ($_SESSION['img'] == '')
+                {
+                ?>
                 <img src="../img/upload_def_icon.jpg" class="rounded-circle img-thumbnail" width="200">
-                <!-- Тут ава пользователя должна быть -->
+                <?php
+                }
+                else
+                {
+                ?>
+                    <img src="../<?php echo $_SESSION['img']; ?>" class="rounded-circle img-thumbnail" width="200">
+                <?php
+                }
+                //?>
+                <!-- Тут отображается ава пользователя -->
             </div>
             <div class="col">
-                Name
+                <?php
+                   print $_SESSION['login']
+                ?>
                 <!-- Тут отображается Никнейм -->
             </div>
             <div class="col">
-                e-mail
+                <?php
+                   print $_SESSION['email']
+                ?>
                 <!-- Тут отображается логин -->
             </div>
         </div>

@@ -8,6 +8,7 @@ if(isset($_SESSION['id']))
     unset($_SESSION['email']);
     unset($_SESSION['root']);
     unset($_SESSION['login']);
+    unset($_SESSION['img']);
     header("Location: index.php");
 }
 else
