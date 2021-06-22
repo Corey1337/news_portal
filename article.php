@@ -18,7 +18,7 @@
          
      
             <div class="col media">
-                <a class="pull-left"><img src="img/3.jpg" class="img-thumbnail media-object" width="300" alt=""></a>
+                <a class="p-3 pull-left"><img src="img/3.jpg" class=" img-thumbnail media-object" width="300" alt=""></a>
                 <div class="media-body">
                     <p>
                         Вчера во время проведения разведоперации наша группа. подверглась нападению неизвестного 
