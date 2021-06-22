@@ -169,6 +169,11 @@ body{margin-top:20px;}
 	height: 200px !important;
 }
 
+.user-img-min {
+    width: 45px !important;
+    height: 45px !important;
+}
+
 .popup {
 	position: fixed;
 	width: 100%;
