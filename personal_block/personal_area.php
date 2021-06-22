@@ -46,13 +46,13 @@ require "../server/config.php";
                 ?>
                 <!-- Тут отображается ава пользователя -->
             </div>
-            <div class="col">
+            <div class="col mt-5 h2">
                 <?php
                    print $_SESSION['login']
                 ?>
                 <!-- Тут отображается Никнейм -->
             </div>
-            <div class="col">
+            <div class="col mt-5 h2">
                 <?php
                    print $_SESSION['email']
                 ?>
