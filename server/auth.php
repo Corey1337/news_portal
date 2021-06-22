@@ -17,6 +17,7 @@ if(!isset($_SESSION['id']))
         if(mysqli_num_rows($query)>0)
         {
             $user=mysqli_fetch_assoc($query);
+            $img=$user['img'];
             $id=$user['id'];
             $root=$user['root'];
             $login=$user['login'];
@@ -25,6 +26,7 @@ if(!isset($_SESSION['id']))
             $_SESSION['email']=$email;
             $_SESSION['root']=$root;
             $_SESSION['id']=$id;
+            $_SESSION['img']=$img;
             //на главную страницу, если вход успешен
             header("Location: /index.php");
         }

@@ -57,11 +57,13 @@ if(!isset($_SESSION['id']))
                 $user=mysqli_fetch_assoc($query);
                 $id=$user['id'];
                 $root=$user['root'];
+                $img=$user['img'];
                 $_SESSION['password']=$password;
                 $_SESSION['login']=$login;
                 $_SESSION['email']=$email;
                 $_SESSION['root']=$user['root'];
                 $_SESSION['id']=$user['id'];
+                $_SESSION['img']=$img;
             }
             header('Location: /index.php');
         }
