@@ -71,15 +71,15 @@ if($_SESSION['root']==1)
                         <?php
                         if ($row['root']==1)
                         {
-                            echo "Админ";
+                            echo '<h6 style="color:#0dcaf0;">Админ</h6>';
                         }
                         elseif($row['root']==0)
                         {
-                            echo "Обычный пользователь";
+                            echo '<h6 style="color:#6c757d;">Обычный пользователь</h6>';
                         }
                         else
                         {
-                            echo "Забанен";
+                            echo '<h6 style="color:#dc3545;">Забанен</h6>';
                         }
                         ?>
                     </div>
@@ -100,13 +100,13 @@ if($_SESSION['root']==1)
                         if($row['root']==1)
                         {
                             ?>
-                            <button type="" class="btn btn-secondary">Пользователь</button>
+                            <button type="" class="btn btn-secondary">Сделать пользователем</button>
                             <?php
                         }
                         else
                         {
                             ?>
-                            <button type="" class="btn btn-info">Админ</button>
+                            <button type="" class="btn btn-info">Сделать админом</button>
                             <?php
                         }
                         ?>
