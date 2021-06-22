@@ -18,7 +18,7 @@ require "../server/config.php";
 
     <div class="menu container mt-5 justify-content-md-center text-center">
         <?php require "pa_blocks/pa_header.php" ?>
-        <div class="row mt-5 rounded border bg-light border-2">
+        <div class=" row mt-5 rounded border bg-light border-2">
             <div class="col">
                 Аватарка
             </div>
@@ -40,7 +40,7 @@ require "../server/config.php";
                 else
                 {
                 ?>
-                    <img src="../<?php echo $_SESSION['img']; ?>" class="rounded-circle img-thumbnail" width="200">
+                    <img src="../<?php echo $_SESSION['img']; ?>" class="user-img rounded-circle img-thumbnail" width="200">
                 <?php
                 }
                 //?>
