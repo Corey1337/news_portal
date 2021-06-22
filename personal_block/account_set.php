@@ -1,3 +1,7 @@
+<?php 
+session_start();
+require "../server/config.php";
+?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -27,12 +31,12 @@
             </div>
             <div class="form-control col rounded border bg-light border-2">
                 Сменить имя
-                <form action="" method="post">
+                <form action="/server/change_name.php" method="post">
                     <h3 class="h4 mt-5">Ваше текущее имя</h3>
                     <h3 class="mt-4"><?php print $_SESSION['login']?></h3>
-                    <input class="form-control mt-5 mb-2" type="text" name="login" placeholder="Новое имя"/>
+                    <input class="form-control mt-5 mb-2" type="text" name="new_login" placeholder="Новое имя"/>
                     <div class="d-grid">
-                        <button type="submit" class=" btn btn-primary mt-4 mb-2">Изменить имя</button>
+                        <button type="submit" name="sub" class=" btn btn-primary mt-4 mb-2">Изменить имя</button>
                     </div>
                 </form>
                 
@@ -45,7 +49,7 @@
                 <input class="form-control mt-4" type="text" name="new_password" placeholder="Новый пароль"/>
                 <input class="form-control mt-4 mb-3" type="text" name="new_password" placeholder="Повторите пароль"/>
                     <div class="d-grid">
-                        <button type="submit" class=" btn btn-primary mt-4 mb-2">Изменить пароль</button>
+                        <button type="submit" name="sub" class=" btn btn-primary mt-4 mb-2">Изменить пароль</button>
                     </div>
                 </form>
             </div>
