@@ -77,8 +77,6 @@ require "../server/config.php";
             </div>
         </div>
     </div>
-    <?php $help = "mail"?>
-    <h3><?php echo $help?></h3>
 
     <?php require "../blocks/footer-min.php"?>
 
