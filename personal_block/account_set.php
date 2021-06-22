@@ -37,8 +37,8 @@ require "../server/config.php";
                     }
                     ?>
                     <input class="mt-2" type="file" name="image" required="">
-                    <div class="card-body d-flex flex-column">
-                        <button type="submit" name="sub" class="align-self-end btn btn-primary mt-auto ">Изменить аватарку</button>
+                    <div class=" d-grid">
+                        <button type="submit" name="sub" class="btn btn-primary mt-2 ">Изменить аватарку</button>
                     </div>
                 </form>
             </div>
@@ -48,8 +48,8 @@ require "../server/config.php";
                     <h3 class="h4 mt-5">Ваше текущее имя</h3>
                     <h3 class="mt-4"><?php print $_SESSION['login']?></h3>
                     <input class="form-control mt-5 mb-2" type="text" name="new_login" placeholder="Новое имя" required=""/>
-                    <div class="card-body d-flex flex-column">
-                        <button type="submit" name="sub" class="align-self-end btn btn-primary mt-auto ">Изменить имя</button>
+                    <div class="d-grid">
+                        <button type="submit" name="sub" class="btn btn-primary mt-4 ">Изменить имя</button>
                     </div>
                 </form>
                 
@@ -70,8 +70,8 @@ require "../server/config.php";
                     <input id="password-input" class="form-control mt-4 mb-3" type="password" name="new_password_check" placeholder="Повторите пароль" required=""/>
                     <!-- <a href="#" class="password-control" onclick="return show_hide_password(this);"></a> -->
                 </div>
-                    <div class="card-body d-flex flex-column">
-                        <button type="submit" name="sub" class="align-self-end btn btn-primary mt-auto">Изменить пароль</button>
+                    <div class="d-grid">
+                        <button type="submit" name="sub" class="btn btn-primary mt-4">Изменить пароль</button>
                     </div>
                 </form>
             </div>
@@ -79,7 +79,6 @@ require "../server/config.php";
     </div>
 
     <?php require "../blocks/footer-min.php"?>
-
     <?php require "pa_popups/same_name_popup.php"?>
     <?php require "pa_popups/same_user_name_popup.php"?>
     <?php require "pa_popups/success_name_change_popup.php"?>
