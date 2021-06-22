@@ -9,6 +9,11 @@
     margin-left: 1%;
 }
 
+.users_list {
+	margin-left: -4px !important;
+	margin-right: -20px !important;
+}
+
 .font-weight-normal {
     font-weight: 400!important;
 }
@@ -172,6 +177,12 @@ body{margin-top:20px;}
 .user-img-min {
     width: 45px !important;
     height: 45px !important;
+}
+
+.users_search {
+	width: 100%;
+	max-width: 350px;
+	display:inline-block !important;
 }
 
 .popup {
