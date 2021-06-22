@@ -157,3 +157,8 @@ body{margin-top:20px;}
 	font-size:15px;
 	margin-right:10px;
 }
+
+.user-img {
+	width: 200px !important;
+	height: 200px !important;
+}

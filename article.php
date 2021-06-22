@@ -54,8 +54,9 @@
                     </fieldset>
                 </form>
                 
-                <h3>4 Comments</h3>
+                <h3>2 Comments</h3>
                 <!-- количество коментов, можно есчо просто удалить -->
+
                 <!-- COMMENT 1 - START -->
                 <div class="media">
                     <a class="pull-left"><img class="rounded-circle img-thumbnail media-object" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt=""></a>

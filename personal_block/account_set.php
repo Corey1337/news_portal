@@ -18,7 +18,7 @@
             <div class="form-control col rounded border bg-light border-2">
                 Сменить аватарку
                 <form class="mt-2" action="" method="post">
-                    <img src="../img/upload_def_icon.jpg" class="rounded-circle img-thumbnail" width="200">
+                    <img src="../img/upload_def_icon.jpg" class="user-img rounded-circle img-thumbnail" width="200">
                     <input class="mt-2" type="file" name="image">
                     <div class="d-grid">
                         <button type="submit" class="btn btn-primary mt-2 mb-2">Изменить аватарку</button>

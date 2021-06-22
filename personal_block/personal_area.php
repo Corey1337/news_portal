@@ -34,7 +34,7 @@ require "../server/config.php";
                 if ($_SESSION['img'] == '')
                 {
                 ?>
-                <img src="../img/upload_def_icon.jpg" class="rounded-circle img-thumbnail" width="200">
+                <img src="../img/1.jpg" class="user-img rounded-circle img-thumbnail" width="200" height="200">
                 <?php
                 }
                 else
