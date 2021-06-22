@@ -50,7 +50,7 @@
                             <div class="form-group col-xs-12 col-sm-9 col-lg-10">
                                 <textarea class="form-control" id="message" placeholder="Your message" required=""></textarea>
                             </div>
-                        </div>  	
+                        </div>  	   
                     </fieldset>
                 </form>
                 

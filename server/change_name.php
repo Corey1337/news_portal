@@ -15,13 +15,13 @@ if(isset($_SESSION['id']))
         if ($new_login==$_SESSION['login'])
         {
 
-            
+            header("Location: /personal_block/account_set.php#popup1");
             exit( "Введённый вами логин совпадает с нынешним <br/>". "<a href= /personal_block/personal_area.php>Back</a>");
 
         }
         if (empty($new_login)) //если пользователь не ввел логин, то выдаем ошибку и останавливаем скрипт
             {
-            exit( "Вы ввели не всю информацию, вернитесь назад и заполните все поля! <br/>". "<a href= /personal_block/account_set.php>Back</a>");
+                exit( "Вы ввели не всю информацию, вернитесь назад и заполните все поля! <br/>". "<a href= /personal_block/account_set.php>Back</a>");
             }
         //если логин введен, то обрабатываем, чтобы теги и скрипты не работали, мало ли что люди могут ввести
         $new_login = stripslashes($new_login);
@@ -37,6 +37,7 @@ if(isset($_SESSION['id']))
 
         if (!empty($myrow['id'])) 
         {
+            header("Location: /personal_block/account_set.php#popup2");
             //header("Location: /registration_error.php");
             exit( "Извините, введённая вами почта или логин уже зарегистрированы. Введите другую почту и логин. <br/>". "<a href= /personal_block/account_set.php>Back</a>");
         }
@@ -50,10 +51,10 @@ if(isset($_SESSION['id']))
             $_SESSION['login']=$new_login;
 
             //!!!ВОТ ТУТ СДЕЛАТЬ ПОП АП, ЧТО ИМЯ УСПЕШНО ИЗМЕНЁНО
-            header('Location: /personal_block/account_set.php');
+            header('Location: /personal_block/account_set.php#popup3');
         }
         else {
-        echo "Ошибка! Пароль не изменён";
+            echo "Ошибка! Пароль не изменён";
         }
     }
     else

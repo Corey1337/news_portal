@@ -72,6 +72,12 @@ require "../server/config.php";
 
     <?php require "../blocks/footer-min.php"?>
 
-    <?php require "pa_popups/same_name_popup.php" ?>
+    <?php require "pa_popups/same_name_popup.php"?>
+    <?php require "pa_popups/same_user_name_popup.php"?>
+    <?php require "pa_popups/success_name_change_popup.php"?>
+    <?php require "pa_popups/seccess_pass_change_popup.php"?>
+    <?php require "pa_popups/incorrect_cur_pass_popup.php"?>
+    <?php require "pa_popups/new_pass_eq_cur_pass_popup.php"?>
+    <?php require "pa_popups/new_pass_neq_popup.php"?>
 </body>
 </html>
