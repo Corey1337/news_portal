@@ -3,6 +3,8 @@
     margin-left: 1%;
 }
 
+
+
 .newnews {
     margin-left: 1%;
 }
@@ -23,6 +25,10 @@
 
 .col {
     margin-left: 1%;
+}
+
+.first-col {
+	margin-left: 0%;
 }
 
 .vertical-center {
