@@ -39,7 +39,8 @@ if(!isset($_SESSION['id']))
 
         if (!empty($myrow['id'])) 
         {
-        exit( "Извините, введённая вами почта или логин уже зарегистрированы. Введите другую почту и логин. <br/>". "<a href= /registration.php>Back</a>");
+            header("Location: /registration_error.php");
+            //exit( "Извините, введённая вами почта или логин уже зарегистрированы. Введите другую почту и логин. <br/>". "<a href= /registration.php>Back</a>");
         }
 
         // если такого нет, то сохраняем данные
@@ -47,10 +48,11 @@ if(!isset($_SESSION['id']))
         // Проверяем, есть ли ошибки
         if ($result2=='TRUE')
         {
-        echo "Вы успешно зарегистрированы! Теперь вы можете зайти на сайт. <a href='/index.php'>Главная страница</a>";
-        $query=mysqli_query($db, "SELECT * FROM `users_attribute` WHERE `email`='$email' AND `password`='$password' ");
+            
+            //echo "Вы успешно зарегистрированы! Теперь вы можете зайти на сайт. <a href='/index.php'>Главная страница</a>";
+            $query=mysqli_query($db, "SELECT * FROM `users_attribute` WHERE `email`='$email' AND `password`='$password' ");
 
-        if(mysqli_num_rows($query)>0)
+            if(mysqli_num_rows($query)>0)
             {
                 $user=mysqli_fetch_assoc($query);
                 $id=$user['id'];
@@ -61,6 +63,7 @@ if(!isset($_SESSION['id']))
                 $_SESSION['root']=$user['root'];
                 $_SESSION['id']=$user['id'];
             }
+            header('Location: /index.php');
         }
         else {
         echo "Ошибка! Вы не зарегистрированы.";

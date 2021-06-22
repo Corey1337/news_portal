@@ -38,7 +38,7 @@
                 
                 
             </div>
-            <div class="form-control col rounded border bg-light border-2">
+            <div class="mt-1 form-control col rounded border bg-light border-2">
                 Сменить пароль
                 <form action="" method="post">
                 <input class="form-control mt-5" type="text" name="cur_password" placeholder="Введите старый пароль"/>

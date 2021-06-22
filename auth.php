@@ -19,6 +19,7 @@
             <title>Вход</title>
         </head>
         <body>
+            
             <div class="text-center">
             
                 <form method="post" action="server/auth.php" class="form-signin">
@@ -26,8 +27,8 @@
                         <img src="img/upd_2_logo.png" wight="100" height="100" class="mt-5"></img>
                     </a>
                     <h1 class="h3 mb-3 font-weight-normal">Войдите в ваш аккаунт</h1>
-                    <input class="form-control mb-1" type="text" name="email" placeholder="Почта"/>
-                    <input class="form-control mb-1" type="password" name="password" placeholder="Пароль"/>
+                    <input class="form-control mb-1" type="text" name="email" placeholder="Почта" required=""/>
+                    <input class="form-control mb-1" type="password" name="password" placeholder="Пароль" required=""/>
                     <input class="form-control btn-primary" type="submit" name="sub" value="Войти" />
                 </form>
                 <p class="text-center">Ещё не успели зарегестрироваться? Тогда сделайте это прямо сейчас</p>

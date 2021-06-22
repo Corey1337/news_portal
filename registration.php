@@ -26,9 +26,9 @@
                         <img src="img/upd_2_logo.png" wight="100" height="100" class="mt-5"></img>
                     </a>
                     <h1 class="h3 mb-3 font-weight-normal">Регистрация</h1>
-                    <input class="form-control mb-1" type="text" name="email" placeholder="Почта"/>
-                    <input class="form-control mb-1" type="text" name="login" placeholder="Имя"/>
-                    <input class="form-control mb-1" type="password" name="password" placeholder="Пароль"/>
+                    <input class="form-control mb-1" type="text" name="email" placeholder="Почта" required=""/>
+                    <input class="form-control mb-1" type="text" name="login" placeholder="Имя" required=""/>
+                    <input class="form-control mb-1" type="password" name="password" placeholder="Пароль" required=""/>
                     <input class="form-control btn-primary" type="submit" name="sub" value="Зарегистрироваться" />
                 </form>
                 <p class="text-center">Уже имеется аккаунт? Тогда войдите в него</p>

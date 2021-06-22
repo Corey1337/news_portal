@@ -30,8 +30,9 @@ if(!isset($_SESSION['id']))
         }
         else
         {  
-            print "Login or password are incorrect, try again! <br/>";
-            print "<a href= /auth.php>Back</a>";
+            //print '';
+            //print "<a href= /auth.php>Back</a>";
+            header("Location: /auth_error.php");
         }
     }
 }
