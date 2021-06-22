@@ -14,12 +14,14 @@ if(isset($_SESSION['id']))
         //print $email." ".$password;
         if ($new_login==$_SESSION['login'])
         {
+
             
             exit( "Введённый вами логин совпадает с нынешним <br/>". "<a href= /personal_block/personal_area.php>Back</a>");
+
         }
         if (empty($new_login)) //если пользователь не ввел логин, то выдаем ошибку и останавливаем скрипт
             {
-            exit( "Вы ввели не всю информацию, вернитесь назад и заполните все поля! <br/>". "<a href= /personal_block/personal_area.php>Back</a>");
+            exit( "Вы ввели не всю информацию, вернитесь назад и заполните все поля! <br/>". "<a href= /personal_block/account_set.php>Back</a>");
             }
         //если логин введен, то обрабатываем, чтобы теги и скрипты не работали, мало ли что люди могут ввести
         $new_login = stripslashes($new_login);
@@ -36,28 +38,31 @@ if(isset($_SESSION['id']))
         if (!empty($myrow['id'])) 
         {
             //header("Location: /registration_error.php");
-            exit( "Извините, введённая вами почта или логин уже зарегистрированы. Введите другую почту и логин. <br/>". "<a href= /personal_block/personal_area.php>Back</a>");
+            exit( "Извините, введённая вами почта или логин уже зарегистрированы. Введите другую почту и логин. <br/>". "<a href= /personal_block/account_set.php>Back</a>");
         }
 
         $login=$_SESSION['login'];
-        // если такого нет, то сохраняем данные
+        // сохраняем данные
         $result2 = mysqli_query ($db,"UPDATE `users_attribute` SET `login`='$new_login' WHERE `login`='$login'");
         // Проверяем, есть ли ошибки
         if ($result2=='TRUE')
         {
-            
-            //echo "Вы успешно зарегистрированы! Теперь вы можете зайти на сайт. <a href='/index.php'>Главная страница</a>";
             $_SESSION['login']=$new_login;
-            header('Location: /personal_block/personal_area.php');
+
+            //!!!ВОТ ТУТ СДЕЛАТЬ ПОП АП, ЧТО ИМЯ УСПЕШНО ИЗМЕНЁНО
+            header('Location: /personal_block/account_set.php');
         }
         else {
-        echo "Ошибка! Вы не зарегистрированы.";
+        echo "Ошибка! Пароль не изменён";
         }
+    }
+    else
+    {
+        header("Location:/index.php");
     }
 }
 else
 {
-    //тут надо как-то переписать, чтобы ссылалось обратно на главную страницу
-    header("Location:index.php");
+    header("Location:/index.php");
 }
 ?>

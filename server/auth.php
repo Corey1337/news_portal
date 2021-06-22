@@ -37,10 +37,13 @@ if(!isset($_SESSION['id']))
             header("Location: /auth_error.php");
         }
     }
+    else
+    {
+        header("Location:/index.php");
+    }
 }
 else
 {
-    //тут надо как-то переписать, чтобы ссылалось обратно на главную страницу
-    header("Location:index.php");
+    header("Location:/index.php");
 }
 ?>

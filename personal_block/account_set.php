@@ -21,11 +21,24 @@ require "../server/config.php";
         <div class="row mt-5">
             <div class="form-control col first-col rounded border bg-light border-2 pa-col">
                 Сменить аватарку
-                <form class="mt-2" action="" method="post">
-                    <img src="../img/upload_def_icon.jpg" class="user-img rounded-circle img-thumbnail" width="200">
+                <form class="mt-2" action="/server/change_img.php" method="post">
+                    <?php
+                    if ($_SESSION['img'] == '')
+                    {
+                        ?>
+                        <img src="../img/upload_def_icon.jpg" class="user-img rounded-circle img-thumbnail" width="200">
+                        <?php
+                    }
+                    else
+                    {
+                        ?>
+                        <img src="../<?php echo $_SESSION['img']; ?>" class="user-img rounded-circle img-thumbnail" width="200">
+                        <?php
+                    }
+                    ?>
                     <input class="mt-2" type="file" name="image" required="">
                     <div class="card-body d-flex flex-column">
-                        <button type="submit" class="align-self-end btn btn-primary mt-auto ">Изменить аватарку</button>
+                        <button type="submit" name="sub" class="align-self-end btn btn-primary mt-auto ">Изменить аватарку</button>
                     </div>
                 </form>
             </div>
@@ -44,10 +57,10 @@ require "../server/config.php";
             </div>
             <div class="form-control col rounded border bg-light border-2 pa-col">
                 Сменить пароль
-                <form action="" method="post">
+                <form action="/server/change_password.php" method="post">
                 <input class="form-control mt-5" type="text" name="cur_password" placeholder="Введите старый пароль" required=""/>
                 <input class="form-control mt-4" type="text" name="new_password" placeholder="Новый пароль" required=""/>
-                <input class="form-control mt-4 mb-3" type="text" name="new_password" placeholder="Повторите пароль" required=""/>
+                <input class="form-control mt-4 mb-3" type="text" name="new_password_check" placeholder="Повторите пароль" required=""/>
                     <div class="card-body d-flex flex-column">
                         <button type="submit" name="sub" class="align-self-end btn btn-primary mt-auto">Изменить пароль</button>
                     </div>

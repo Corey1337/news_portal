@@ -43,7 +43,7 @@ require "../server/config.php";
                     <img src="../<?php echo $_SESSION['img']; ?>" class="user-img rounded-circle img-thumbnail" width="200">
                 <?php
                 }
-                //?>
+                ?>
                 <!-- Тут отображается ава пользователя -->
             </div>
             <div class="col">

@@ -71,10 +71,13 @@ if(!isset($_SESSION['id']))
         echo "Ошибка! Вы не зарегистрированы.";
         }
     }
+    else
+    {
+        header("Location:/index.php");
+    }
 }
 else
 {
-    //тут надо как-то переписать, чтобы ссылалось обратно на главную страницу
-    header("Location:index.php");
+    header("Location:/index.php");
 }
 ?>
