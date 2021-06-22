@@ -51,13 +51,13 @@ if($_SESSION['root']==1)
                         if ($row['img'] == '')
                         {
                         ?>
-                        <img src="../img/upload_def_icon.jpg" class="user-img-min rounded-circle img-thumbnail">
+                            <img src="../img/upload_def_icon.jpg" class="user-img-min rounded-circle img-thumbnail">
                         <?php
                         }
                         else
                         {
                         ?>
-                        <img src="../<?php echo $row['img']; ?>" class="user-img-min rounded-circle img-thumbnail">
+                            <img src="../<?php echo $row['img']; ?>" class="user-img-min rounded-circle img-thumbnail">
                         <?php
                         }
                         ?>
@@ -75,7 +75,7 @@ if($_SESSION['root']==1)
                         }
                         elseif($row['root']==0)
                         {
-                            echo '<h6 style="color:#6c757d;">Обычный пользователь</h6>';
+                            echo '<h6 style="color:#6c757d;">Пользователь</h6>';
                         }
                         else
                         {

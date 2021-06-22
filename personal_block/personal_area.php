@@ -28,6 +28,9 @@ require "../server/config.php";
             <div class="col">
                 Почта
             </div>
+            <div class="col">
+                Статус
+            </div>
             <div class="w-100 mt-2"></div>
             <div class="col mb-2">
                 <?php
@@ -57,6 +60,23 @@ require "../server/config.php";
                    print $_SESSION['email']
                 ?>
                 <!-- Тут отображается логин -->
+            </div>
+            <div class="col mt-5 h2">
+                <?php
+                    if ($_SESSION['root'] == 0)
+                    {
+                        print '<h3 style="color:#6c757d";>Пользователь</h3>';
+                    }
+                    elseif ($_SESSION['root'] == 1)
+                    {
+                        print '<h3 style="color:#0dcaf0";>Админ</h3>';
+                    }
+                    if ($_SESSION['root'] == 2)
+                    {
+                        print '<h3 style="color:#dc3545";>Забен</h3>';
+                    }
+                ?>
+                <!-- Тут отображается статус -->
             </div>
         </div>
     </div>
