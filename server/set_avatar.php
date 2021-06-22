@@ -4,7 +4,6 @@
     require "config.php";
 ?>
 
-
 <?php
 
 if(isset($_SESSION['id']))
