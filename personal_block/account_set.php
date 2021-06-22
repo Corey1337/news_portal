@@ -57,6 +57,8 @@ require "../server/config.php";
     </div>
     
 
-    <?php require "../blocks/footer-min.php" ?>
+    <?php require "../blocks/footer-min.php"?>
+
+    <?php require "pa_popups/same_name_popup.php" ?>
 </body>
 </html>
