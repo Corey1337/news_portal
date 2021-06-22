@@ -32,18 +32,18 @@ require "../server/config.php";
                 Статус
             </div>
             <div class="w-100 mt-2"></div>
-            <div class="col mb-2">
+            <div class="user-img-div col mb-2">
                 <?php
                 if ($_SESSION['img'] == '')
                 {
                 ?>
-                <img src="../img/upload_def_icon.jpg" class="user-img rounded-circle img-thumbnail" width="200" height="200">
+                <img src="../img/upload_def_icon.jpg" class="user-img rounded-circle img-thumbnail">
                 <?php
                 }
                 else
                 {
                 ?>
-                    <img src="../<?php echo $_SESSION['img']; ?>" class="user-img rounded-circle img-thumbnail" width="200">
+                    <img src="../<?php echo $_SESSION['img']; ?>" class="user-img rounded-circle img-thumbnail">
                 <?php
                 }
                 ?>
