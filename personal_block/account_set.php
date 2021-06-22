@@ -23,7 +23,7 @@ require "../server/config.php";
                 Сменить аватарку
                 <form class="mt-2" action="" method="post">
                     <img src="../img/upload_def_icon.jpg" class="user-img rounded-circle img-thumbnail" width="200">
-                    <input class="mt-2" type="file" name="image">
+                    <input class="mt-2" type="file" name="image" required="">
                     <div class="card-body d-flex flex-column">
                         <button type="submit" class="align-self-end btn btn-primary mt-auto ">Изменить аватарку</button>
                     </div>
@@ -34,7 +34,7 @@ require "../server/config.php";
                 <form action="/server/change_name.php" method="post">
                     <h3 class="h4 mt-5">Ваше текущее имя</h3>
                     <h3 class="mt-4"><?php print $_SESSION['login']?></h3>
-                    <input class="form-control mt-5 mb-2" type="text" name="new_login" placeholder="Новое имя"/>
+                    <input class="form-control mt-5 mb-2" type="text" name="new_login" placeholder="Новое имя" required=""/>
                     <div class="card-body d-flex flex-column">
                         <button type="submit" name="sub" class="align-self-end btn btn-primary mt-auto ">Изменить имя</button>
                     </div>
@@ -45,9 +45,9 @@ require "../server/config.php";
             <div class="form-control col rounded border bg-light border-2 pa-col">
                 Сменить пароль
                 <form action="" method="post">
-                <input class="form-control mt-5" type="text" name="cur_password" placeholder="Введите старый пароль"/>
-                <input class="form-control mt-4" type="text" name="new_password" placeholder="Новый пароль"/>
-                <input class="form-control mt-4 mb-3" type="text" name="new_password" placeholder="Повторите пароль"/>
+                <input class="form-control mt-5" type="text" name="cur_password" placeholder="Введите старый пароль" required=""/>
+                <input class="form-control mt-4" type="text" name="new_password" placeholder="Новый пароль" required=""/>
+                <input class="form-control mt-4 mb-3" type="text" name="new_password" placeholder="Повторите пароль" required=""/>
                     <div class="card-body d-flex flex-column">
                         <button type="submit" name="sub" class="align-self-end btn btn-primary mt-auto">Изменить пароль</button>
                     </div>
