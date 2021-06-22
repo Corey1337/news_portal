@@ -85,29 +85,36 @@ if($_SESSION['root']==1)
                     </div>
                     <div class="col">
                         <?php
-                        if($row['root']==1 or $row['root']==0)
+                        if($_SESSION['email']!=$row['email'])
                         {
-                            ?>
-                            <button type="" class="btn btn-danger">Бан</button>
-                            <?php
+                            if($row['root']==1 or $row['root']==0)
+                            {
+                                ?>
+                                <button type="" class="btn btn-danger">Бан</button>
+                                <?php
+                            }
+                            else
+                            {
+                                ?>
+                                <button type="" class="btn btn-success">Разбан</button>
+                                <?php
+                            }
+                            if($row['root']==1)
+                            {
+                                ?>
+                                <button type="" class="btn btn-secondary">Сделать пользователем</button>
+                                <?php
+                            }
+                            else
+                            {
+                                ?>
+                                <button type="" class="btn btn-info">Сделать админом</button>
+                                <?php
+                            }
                         }
                         else
                         {
-                            ?>
-                            <button type="" class="btn btn-success">Разбан</button>
-                            <?php
-                        }
-                        if($row['root']==1)
-                        {
-                            ?>
-                            <button type="" class="btn btn-secondary">Сделать пользователем</button>
-                            <?php
-                        }
-                        else
-                        {
-                            ?>
-                            <button type="" class="btn btn-info">Сделать админом</button>
-                            <?php
+                            echo 'Это вы!';
                         }
                         ?>
                     </div>
