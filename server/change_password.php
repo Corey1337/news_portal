@@ -54,7 +54,7 @@ if(isset($_SESSION['id']))
         {
             $_SESSION['password']=$new_password;
 
-            //!!!!!ВОТ ТУТ СДЕЛАТЬ ПОП АП, ЧТО ПАРОЛЬ УСПЕШНО ИЗМЕНЁН
+            //!!!!!ВОТ ТУТ СДЕЛАТЬ ПОП ИТ, ЧТО ПАРОЛЬ УСПЕШНО ИЗМЕНЁН
             header('Location: /personal_block/account_set.php#popup4');
         }
         else 
