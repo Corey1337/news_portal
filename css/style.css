@@ -171,7 +171,11 @@ body{margin-top:20px;}
 
 .user-img {
 	width: 200px !important;
-	height: 200px !important;
+	height:  200px!important;
+}
+
+.user-img-div {
+	
 }
 
 .user-img-min {
