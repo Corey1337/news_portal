@@ -25,6 +25,13 @@ if($_SESSION['root']==1)
             <?php require "pa_blocks/pa_header.php" ?>
             <div class="row mt-5 rounded border bg-light border-2">
                 <h3 class="h4">Список пользователей</h3>
+                <div>
+                    <form action="" method="post" class="users_search">
+                        <input type="text" name="user" class="form-control d-inline" required="" placeholder="Поиск по ключевому слову">
+                        <input type="submit" name="user_search" class="mt-2 d-inline btn btn-primary" value="Искать"/>
+                    </form>
+                    <!-- ПОИСК ПОЛЬЗОВАТЕЛЯ -->
+                </div>
                 <div class="row mt-4">
                     <div class="col">
                         Имя
@@ -46,7 +53,7 @@ if($_SESSION['root']==1)
                 {
                 $value=$row['email'];
                 ?>
-                <div class="row mt-4 vertical-center">
+                <div class="row mt-4 vertical-center mb-1">
                     <div class="col">
                         <?php
                         if ($row['img'] == '')

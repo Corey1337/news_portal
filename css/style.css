@@ -174,6 +174,12 @@ body{margin-top:20px;}
     height: 45px !important;
 }
 
+.users_search {
+	width: 100%;
+	max-width: 350px;
+	display:inline-block !important;
+}
+
 .popup {
 	position: fixed;
 	width: 100%;
