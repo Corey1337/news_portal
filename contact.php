@@ -21,7 +21,10 @@
             <img class="mx-auto d-block" src="img/VK_logo.png" width="100px">
                 <a class="text-decoration-none text-dark" href="https://vk.com/id240873722" target="_blank"><p class="mt-4 text-center">frontend</p></a>
                 <a class="text-decoration-none text-dark" href="https://vk.com/dio_brando_karterr" target="_blank"><p class="mt-3 text-center">backend</p></a>
-
+            </div>
+            <div class="col text-center">
+                <img class="mx-auto d-block" src="img/loc.png" width="100px">
+                <a class="text-decoration-none text-dark" href="https://goo.gl/maps/MzT3naKvy1YZV4ep9" target="_blank"><p id="myInp" class="mt-1 text-center" onclick="copyElementText('myInp')">ул. Патрокл, 6, Владивосток, Приморский край, 690000</p></a>
             </div>
             <div class="col text-center">
                 <img class="mx-auto d-block" src="img/mail.png" width="100px">
