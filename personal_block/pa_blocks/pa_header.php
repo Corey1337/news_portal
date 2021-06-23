@@ -25,7 +25,7 @@ if(isset($_SESSION['id']))
     }
     ?>
     <div class="col">
-        <a class="text-dark text-decoration-none" href="../contact.php">Поддержка</a>
+        <a class="text-dark text-decoration-none" href="#popup9">Поддержка</a>
     </div>
     
 </div>

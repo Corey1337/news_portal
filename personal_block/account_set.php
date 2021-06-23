@@ -87,6 +87,7 @@ require "../server/config.php";
     <?php require "pa_popups/new_pass_eq_cur_pass_popup.php"?>
     <?php require "pa_popups/new_pass_neq_popup.php"?>
     <?php require "pa_popups/avatar_size_exeption.php"?>
+    <?php require "pa_popups/support_popup.php"?>
 
 </body>
 </html>
