@@ -1,5 +1,6 @@
 <?php
     session_start();
+   /// require "server/add_news.php"
 ?>
 <?php
         //print $_SESSION['root'];
@@ -19,7 +20,7 @@
     <body>
         <?php require "blocks/header.php" ?>
         <div class="container mt-5">
-            <form action="" method="post">
+            <form action="server/add_news.php" method="post">
                     <div class="form-group">
                         <label for="article-pic">Картинка статьи:</label>
                         <img id="article-pic" src="img/upload_def_icon.jpg">
@@ -30,15 +31,15 @@
                     </div>
                     <div class="form-group mt-5">
                         <label for="heading">Заголовок:</label>
-                        <input class="form-control" type="text" id="heading" name="heading">
-                    </div>
+                        <input class="form-control" type="text" id="tittle" name="tittle">
+                    </div>  
                     <div class="form-group mt-5">
                         <label for="desc">Краткое описание:</label>
-                        <textarea class="form-control" id="desc" name="desc"></textarea>
+                        <textarea class="form-control" id="desc" type="text"  name="intro_text"></textarea>
                     </div>
                     <div class="form-group mt-5">
                         <label for="article">Статья:</label>
-                        <textarea class="form-control" id="article" name="article"></textarea>
+                        <textarea class="form-control" type="text"  id="full_text" name="full_text"></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary mt-5">Submit</button>
                     <!-- После нажатия все данные с форм отправляются там куда-то вам и после должны на главной появиться -->
