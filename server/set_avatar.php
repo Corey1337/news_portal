@@ -13,7 +13,7 @@ if(isset($_SESSION['id']))
         $old_img=$_SESSION['img'];
         if ($_FILES['file']['size'] > $size)
         {
-            header('Location: /personal_block/account_set.php#popup6');
+            header('Location: /personal_block/account_set.php#popup8');
             echo 'Давай файл поменьше';
             exit ("Давай файл поменьше");
         }
@@ -42,7 +42,7 @@ if(isset($_SESSION['id']))
             }
             else
             {
-                header('Location: /personal_block/account_set.php#popup6');
+                header('Location: /personal_block/account_set.php#popup8');
                 exit( "Извините, введённая вами почта или логин уже зарегистрированы. Введите другую почту и логин. <br/>". "<a href= /registration.php>Back</a>");
             }
         }
@@ -50,7 +50,7 @@ if(isset($_SESSION['id']))
     }
     else
     {
-        header("Location:/personal_block/account_set.php#popup4");
+        header("Location:/personal_block/account_set.php#popup8");
     }
 }
 else
