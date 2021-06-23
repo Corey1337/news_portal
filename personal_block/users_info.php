@@ -156,6 +156,7 @@ if($_SESSION['root']==1)
         
 
         <?php require "../blocks/footer-min.php" ?>
+        <?php require "pa_popups/support_popup.php"?>
     </body>
     </html>
     <?php
