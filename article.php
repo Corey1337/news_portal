@@ -14,9 +14,13 @@
 
     <div class="container mt-5">
         <h3 class="text-center newnews mb-5">Заголовок</h3>
+        <div class="" style="margin-left: 1%;">
+            <h6 class="mt-2">Автор: Corey</h6> 
+            <h6 class="float-right">Дата публикации: <?php print(date('d.m.Y',strtotime($post['date']))); ?></h6>
+            <!-- ТУТ ГОД И АВТОРА НОРМ ВЫВОДИТЬ -->
+        </div>
+
         <div class="row">
-         
-     
             <div class="col media">
                 <a class="p-3 pull-left"><img src="news_img/3.jpg" class=" img-thumbnail media-object" width="300" alt=""></a>
                 <div class="media-body">

@@ -48,7 +48,11 @@
             <div class="card mb-4 rounded-3 shadow-sm">
                 <div class="card-header py-3">
                     <h4 class="my-0 fw-normal"><?php print_r( $post['tittle']); ?></h4>
-                    <h6><?php print(date('Y-m-d',strtotime($post['date']))); ?></h6>
+                    <div class="">
+                        <h6 class="mt-2">Автор: Corey</h6> 
+                        <h6 class="float-right">Дата публикации: <?php print(date('d.m.Y',strtotime($post['date']))); ?></h6>
+                        <!-- НАДО ПРАВИЛЬНОГО АВТОРА -->
+                    </div>
                 </div>
                 <div class="card-body">
                     <div> <img src="news_img/<?php print_r($post['img_id']); ?>.jpg" class="img-thumbnail rounded mx-auto d-block" width="50%">
