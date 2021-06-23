@@ -41,24 +41,27 @@
         }?>
         <!-- к этой кнопеке надо прикрутить проверку на админа хз как -->
 
-
         <div class="d-flex flex-wrap">
-            <?php
-                for($i = 0; $i < 4; $i++):
-            ?>
-            <div class="card mb-4 rounded-3 shadow-sm">
-                <div class="card-header py-3">
-                    <h4 class="my-0 fw-normal">Заголовоки</h4>
-                </div>
-                <div class="card-body">
-                    <img src="news_img/<?php echo ($i + 1) ?>.jpg" class="img-thumbnail rounded mx-auto d-block" width="50%"></img>
-                    <div>
-                        <h5>Тут всякой текстик</h5>
-                    </div>
-                    <button type="button" class="w-100 btn btn-lg btn-outline-primary" onclick="document.location='article.php'">Подробнее</button>
-                </div>
-            </div>
-                 <?php endfor ?>
+                        <?php require "server/fun_spawn_news.php"; ?>
+                                    <?php  $result=get_news() ;
+                                
+                        while ($post= mysqli_fetch_assoc($result)) {
+            echo ' <div class="card mb-4 rounded-3 shadow-sm">
+                        <div class="card-header py-3">
+                                            <h4 class="my-0 fw-normal">';
+                                            print_r( $post['tittle']);
+                            echo'</h4>
+                                    <h6>';
+                            print(date('Y-m-d',strtotime($post['date'])));
+                                  echo'</h6>
+                         </div>
+                         <div class="card-body">
+                            <div> <img src="news_img/'; print_r($post['img_id'])  ;echo'.jpg" class=img-thumbnail rounded mx-auto d-block width=50% </img>
+                                 <h5>';print_r($post['intro_text']);echo'</h5>
+                             </div>
+                              <button type="button" class="w-100 btn btn-lg btn-outline-primary" onclick="document.location=`article.php`">Подробнее</button>
+                        </div>
+                        </div>';}?>
         </div>
     </div>
 <!-- test -->
