@@ -18,7 +18,7 @@
          
      
             <div class="col media">
-                <a class="p-3 pull-left"><img src="img/3.jpg" class=" img-thumbnail media-object" width="300" alt=""></a>
+                <a class="p-3 pull-left"><img src="news_img/3.jpg" class=" img-thumbnail media-object" width="300" alt=""></a>
                 <div class="media-body">
                     <p>
                         Вчера во время проведения разведоперации наша группа. подверглась нападению неизвестного 
@@ -69,7 +69,7 @@
             </div>
         </div>
         <button  class="btn btn-outline-info">
-            <img src="img/pen.png" width="40">
+            <img src="news_img/pen.png" width="40">
         </button>
     <!-- Прикрутить к этой кнопке редактор текста и сделать недоступной для простолюдинов -->
     

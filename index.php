@@ -51,7 +51,7 @@
                     <h4 class="my-0 fw-normal">Заголовоки</h4>
                 </div>
                 <div class="card-body">
-                    <img src="img/<?php echo ($i + 1) ?>.jpg" class="img-thumbnail rounded mx-auto d-block" width="50%"></img>
+                    <img src="news_img/<?php echo ($i + 1) ?>.jpg" class="img-thumbnail rounded mx-auto d-block" width="50%"></img>
                     <div>
                         <h5>Тут всякой текстик</h5>
                     </div>
