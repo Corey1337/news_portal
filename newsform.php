@@ -1,6 +1,6 @@
 <?php
     session_start();
-   /// require "server/add_news.php"
+
 ?>
 <?php
         //print $_SESSION['root'];
@@ -20,26 +20,26 @@
     <body>
         <?php require "blocks/header.php" ?>
         <div class="container mt-5">
-            <form action="server/add_news.php" method="post">
+            <form action="server/add_news.php "enctype="multipart/form-data" method="post">
                     <div class="form-group">
                         <label for="article-pic">Картинка статьи:</label>
-                        <img id="article-pic" src="img/upload_def_icon.jpg">
+                    <!--   <img id="article-pic" src="img/upload_def_icon.jpg"> НУ А ПОКА ПУСТЬ ТАК-->
                         <div>
-                            <input type="file" name="image">
+                            <input type="file" required name="image_t">
                             <!-- При выборе файла выбранная картинка должна появиться вместо деф пикчи -->
                         </div>
                     </div>
                     <div class="form-group mt-5">
                         <label for="heading">Заголовок:</label>
-                        <input class="form-control" type="text" id="tittle" name="tittle">
+                        <input class="form-control" required type="text" id="tittle" name="tittle">
                     </div>  
                     <div class="form-group mt-5">
                         <label for="desc">Краткое описание:</label>
-                        <textarea class="form-control" id="desc" type="text"  name="intro_text"></textarea>
+                        <textarea class="form-control" required id="desc" type="text"  name="intro_text"></textarea>
                     </div>
                     <div class="form-group mt-5">
                         <label for="article">Статья:</label>
-                        <textarea class="form-control" type="text"  id="full_text" name="full_text"></textarea>
+                        <textarea class="form-control" type="text"  required id="full_text" name="full_text"></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary mt-5">Submit</button>
                     <!-- После нажатия все данные с форм отправляются там куда-то вам и после должны на главной появиться -->

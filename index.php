@@ -49,7 +49,7 @@
                 <div class="card-header py-3">
                     <h4 class="my-0 fw-normal"><?php print_r( $post['tittle']); ?></h4>
                     <div class="">
-                        <h6 class="mt-2">Автор: Corey</h6> 
+                        <h6 class="mt-2">Aвтор: <?php print_r( $post['name_users']); ?> </h6> 
                         <h6 class="float-right">Дата публикации: <?php print(date('d.m.Y',strtotime($post['date']))); ?></h6>
                         <!-- НАДО ПРАВИЛЬНОГО АВТОРА -->
                     </div>
