@@ -1,3 +1,7 @@
+<?php
+    session_start();
+    require "server/config.php";
+?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -45,9 +49,22 @@
                 </div>
             </div>
         </div>
-        <button  class="btn btn-outline-info">
+
+        <?php  if(isset($_SESSION['id']))
+        {
+            
+            if($_SESSION['root']==1)
+            {
+            ?>
+            <button  class="btn btn-outline-info">
             <img src="news_img/pen.png" width="40">
         </button>
+
+                <?php
+            }
+                
+        }?>
+        
     <!-- Прикрутить к этой кнопке редактор текста и сделать недоступной для простолюдинов -->
     
     <section class="content-item mt-4" id="comments">
