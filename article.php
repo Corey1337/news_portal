@@ -55,9 +55,11 @@
             
             if($_SESSION['root']==1)
             {
-            ?>
-            <button  class="btn btn-outline-info">
+            ?><form action="server/article_change.php" method="post">
+            <button id="id_n_c"  name="id_n_c" value=<?php echo $d;?>  class="btn btn-outline-info">
             <img src="news_img/pen.png" width="40">
+            </form>
+            
         </button>
 
                 <?php
