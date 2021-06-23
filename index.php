@@ -58,7 +58,10 @@
                     <div> <img src="news_img/<?php print_r($post['img_id']); ?>.jpg" class="img-thumbnail rounded mx-auto d-block" width="50%">
                         <h5><?php print_r($post['intro_text']); ?></h5>
                     </div>
-                    <button type="button" class="w-100 btn btn-lg btn-outline-primary" onclick="document.location='article.php'">Подробнее</button>
+                    <form action="article.php" method="post">
+                    <button  id="id_n"  name="id_n" value=<?php print_r($post['id']); ?> 
+                    class="w-100 btn btn-lg btn-outline-primary" onclick="document.location='article.php'">Подробнее</button>
+                    </form>
                 </div>
             </div>
             <?php }; ?>
