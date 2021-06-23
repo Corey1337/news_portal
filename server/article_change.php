@@ -38,14 +38,18 @@ require "config.php";
     
     ?>
         <div class="container mt-5">
-            <form action="server/change_news.php "enctype="multipart/form-data" method="post">
+            <form action="change_news.php "enctype="multipart/form-data" method="post">
                     <div class="form-group">
                         <label for="article-pic">Картинка статьи:</label>
                         <img   src="../news_img/<?php print_r($news['img_id']);?>.jpg"> 
-                        <div>
-                            <input type="file"  name="image_t">
-                            <!-- При выборе файла выбранная картинка должна появиться вместо деф пикчи -->
-                        </div>
+                    <!--     <div>
+                            <input type="file"  name="image_t"> пока не будем редачить фото
+                            При выборе файла выбранная картинка должна появиться вместо деф пикчи 
+                        </div>-->
+                    </div>
+                    <div class="form-group mt-5">
+                        <label for="desc">ID Новости:</label>
+                        <textarea class="form-control" readonly id="n_id" type="text"  name="n_id"><?php echo $d?></textarea>
                     </div>
                     <div class="form-group mt-5">
                         <label for="heading">Заголовок:</label>
