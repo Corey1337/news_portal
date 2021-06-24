@@ -41,7 +41,7 @@ require "config.php";
             <form action="change_news.php "enctype="multipart/form-data" method="post">
                     <div class="form-group">
                         <label for="article-pic">Картинка статьи:</label>
-                        <img   src="../news_img/<?php print_r($news['img_id']);?>.jpg"> 
+                        <img src="../news_img/<?php print_r($news['img_id']);?>.jpg" width="20%"> 
                     <!--     <div>
                             <input type="file"  name="image_t"> пока не будем редачить фото
                             При выборе файла выбранная картинка должна появиться вместо деф пикчи 
