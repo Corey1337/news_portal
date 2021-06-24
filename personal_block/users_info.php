@@ -1,6 +1,7 @@
 <?php 
 session_start();
 require "../server/config.php";
+setlocale(LC_ALL, "ru_RU.CP1251");
 ?>
 
 <?php
@@ -49,495 +50,124 @@ if($_SESSION['root']==1)
                 <!-- Сверху шапка туда не лезь -->
                 <?php
                 //$result = $db->query('SELECT * FROM `users_attribute`');
+                $search=mb_strtolower($_SESSION['search']);
                 if(($_SESSION['need_of_search'])==FALSE)
                 {
-                    $result = $db->query('SELECT * FROM `users_attribute`');
-                    while($row = $result->fetch_assoc())
-                    {
-                    $value=$row['email'];
-                    ?>
-                    <div class="row mt-4 vertical-center mb-1">
-                        <div class="col">
-                            <?php
-                            if ($row['img'] == '')
-                            {
-                            ?>
-                                <img src="../img/upload_def_icon.jpg" class="user-img-min rounded-circle img-thumbnail">
-                            <?php
-                            }
-                            else
-                            {
-                            ?>
-                                <img src="../<?php echo $row['img']; ?>" class="user-img-min rounded-circle img-thumbnail">
-                            <?php
-                            }
-                            ?>
-                            <!-- <img class="rounded-circle img-thumbnail" src="../img/upload_def_icon.jpg" width="45"> -->
-                            <?php print $row['login'] ?>
-                        </div>
-                        <div class="col">
-                            <?php print $row['email'] ?>
-                        </div>
-                        <div class="col">
-                            <?php
-                            if ($row['root']==1)
-                            {
-                                echo '<h6 style="color:#0dcaf0;">Админ</h6>';
-                            }
-                            elseif($row['root']==0)
-                            {
-                                echo '<h6 style="color:#6c757d;">Пользователь</h6>';
-                            }
-                            else
-                            {
-                                echo '<h6 style="color:#dc3545;">Забанен</h6>';
-                            }
-                            ?>
-                        </div>
-                        <div class="col">
-                            <?php
-                            if($_SESSION['email']!=$row['email'])
-                            {
-                                if($row['root']==1 or $row['root']==0)
-                                {
-                                    ?>
-                                    <form style="display:inline-block" method="post" action="/server/privilege.php">
-                                        <input type="hidden" name="email" value="<?php echo $value; ?>" />
-                                        <input type="submit" name="ban" class="btn btn-danger" value="Бан" />
-                                    </form>
-                                    <?php
-                                }
-                                else
-                                {
-                                    ?>
-                                    <form style="display:inline-block" method="post" action="/server/privilege.php">
-                                        <input type="hidden" name="email" value="<?php echo $value; ?>" />
-                                        <input type="submit" name="unban" class="btn btn-success" value="Разбан" />
-                                    </form>
-                                    <?php
-                                    
-                                }
-                                if($row['root']==1)
-                                {
-                                    ?>
-                                    <form style="display:inline-block" method="post" action="/server/privilege.php">
-                                        <input type="hidden" name="email" value="<?php echo $value; ?>" />
-                                        <input type="submit" name="set_user" class="btn btn-secondary" value="Сделать пользователем" />
-                                    </form>
-                                    <?php
-                                }
-                                else
-                                {
-                                    ?>
-                                    <form style="display:inline-block" method="post" action="/server/privilege.php">
-                                        <input type="hidden" name="email" value="<?php echo $value; ?>" />
-                                        <input type="submit" name="set_admin" class="btn btn-info" value="Сделать админом" />
-                                    </form>
-                                    <?php
-                                }
-                            }
-                            else
-                            {
-                                echo 'Это вы!';
-                            }
-                            ?>
-                        </div>
-                    </div>
-                    <?php
-                    }
+                    $result = $db->query("SELECT * FROM `users_attribute`");
                 }
-                elseif($_SESSION['search']=="Админ" or $_SESSION['search']=="админ" or $_SESSION['search']=="АДМИН")
+                elseif($search=="админ")
                 {
-                    $search=$_SESSION['search'];
-                    $result = $db->query('SELECT * FROM `users_attribute` WHERE `root`=1 OR `email` = "Админ" OR `email` = "админ" OR `email` = "АДМИН" OR `login` = "Админ" OR `login` = "админ" OR `login` = "АДМИН" ');
-                    while($row = $result->fetch_assoc())
-                    {
-                    $value=$row['email'];
-                    ?>
-                    <div class="row mt-4 vertical-center mb-1">
-                        <div class="col">
-                            <?php
-                            if ($row['img'] == '')
-                            {
-                            ?>
-                                <img src="../img/upload_def_icon.jpg" class="user-img-min rounded-circle img-thumbnail">
-                            <?php
-                            }
-                            else
-                            {
-                            ?>
-                                <img src="../<?php echo $row['img']; ?>" class="user-img-min rounded-circle img-thumbnail">
-                            <?php
-                            }
-                            ?>
-                            <!-- <img class="rounded-circle img-thumbnail" src="../img/upload_def_icon.jpg" width="45"> -->
-                            <?php print $row['login'] ?>
-                        </div>
-                        <div class="col">
-                            <?php print $row['email'] ?>
-                        </div>
-                        <div class="col">
-                            <?php
-                            if ($row['root']==1)
-                            {
-                                echo '<h6 style="color:#0dcaf0;">Админ</h6>';
-                            }
-                            elseif($row['root']==0)
-                            {
-                                echo '<h6 style="color:#6c757d;">Пользователь</h6>';
-                            }
-                            else
-                            {
-                                echo '<h6 style="color:#dc3545;">Забанен</h6>';
-                            }
-                            ?>
-                        </div>
-                        <div class="col">
-                            <?php
-                            if($_SESSION['email']!=$row['email'])
-                            {
-                                if($row['root']==1 or $row['root']==0)
-                                {
-                                    ?>
-                                    <form style="display:inline-block" method="post" action="/server/privilege.php">
-                                        <input type="hidden" name="email" value="<?php echo $value; ?>" />
-                                        <input type="submit" name="ban" class="btn btn-danger" value="Бан" />
-                                    </form>
-                                    <?php
-                                }
-                                else
-                                {
-                                    ?>
-                                    <form style="display:inline-block" method="post" action="/server/privilege.php">
-                                        <input type="hidden" name="email" value="<?php echo $value; ?>" />
-                                        <input type="submit" name="unban" class="btn btn-success" value="Разбан" />
-                                    </form>
-                                    <?php
-                                    
-                                }
-                                if($row['root']==1)
-                                {
-                                    ?>
-                                    <form style="display:inline-block" method="post" action="/server/privilege.php">
-                                        <input type="hidden" name="email" value="<?php echo $value; ?>" />
-                                        <input type="submit" name="set_user" class="btn btn-secondary" value="Сделать пользователем" />
-                                    </form>
-                                    <?php
-                                }
-                                else
-                                {
-                                    ?>
-                                    <form style="display:inline-block" method="post" action="/server/privilege.php">
-                                        <input type="hidden" name="email" value="<?php echo $value; ?>" />
-                                        <input type="submit" name="set_admin" class="btn btn-info" value="Сделать админом" />
-                                    </form>
-                                    <?php
-                                }
-                            }
-                            else
-                            {
-                                echo 'Это вы!';
-                            }
-                            ?>
-                        </div>
-                    </div>
-                    <?php
-                    }
+                    $result = $db->query("SELECT * FROM `users_attribute` WHERE `root`=1 OR `email` LIKE '%$search%' OR `login` LIKE '%$search%' ");
                 }
-                elseif($_SESSION['search']=="Забанен" or $_SESSION['search']=="забанен" or $_SESSION['search']=="ЗАБАНЕН")
+                elseif($search=="пользователь")
                 {
-                    $search=$_SESSION['search'];
-                    $result = $db->query('SELECT * FROM `users_attribute` WHERE `root`=2 OR `email` = "Забанен" OR `email` = "забанен" OR `email` = "ЗАБАНЕН" OR `login` = "Забанен" OR `login` = "забанен" OR `login` = "ЗАБАНЕН" ');
-                    while($row = $result->fetch_assoc())
-                    {
-                    $value=$row['email'];
-                    ?>
-                    <div class="row mt-4 vertical-center mb-1">
-                        <div class="col">
-                            <?php
-                            if ($row['img'] == '')
-                            {
-                            ?>
-                                <img src="../img/upload_def_icon.jpg" class="user-img-min rounded-circle img-thumbnail">
-                            <?php
-                            }
-                            else
-                            {
-                            ?>
-                                <img src="../<?php echo $row['img']; ?>" class="user-img-min rounded-circle img-thumbnail">
-                            <?php
-                            }
-                            ?>
-                            <!-- <img class="rounded-circle img-thumbnail" src="../img/upload_def_icon.jpg" width="45"> -->
-                            <?php print $row['login'] ?>
-                        </div>
-                        <div class="col">
-                            <?php print $row['email'] ?>
-                        </div>
-                        <div class="col">
-                            <?php
-                            if ($row['root']==1)
-                            {
-                                echo '<h6 style="color:#0dcaf0;">Админ</h6>';
-                            }
-                            elseif($row['root']==0)
-                            {
-                                echo '<h6 style="color:#6c757d;">Пользователь</h6>';
-                            }
-                            else
-                            {
-                                echo '<h6 style="color:#dc3545;">Забанен</h6>';
-                            }
-                            ?>
-                        </div>
-                        <div class="col">
-                            <?php
-                            if($_SESSION['email']!=$row['email'])
-                            {
-                                if($row['root']==1 or $row['root']==0)
-                                {
-                                    ?>
-                                    <form style="display:inline-block" method="post" action="/server/privilege.php">
-                                        <input type="hidden" name="email" value="<?php echo $value; ?>" />
-                                        <input type="submit" name="ban" class="btn btn-danger" value="Бан" />
-                                    </form>
-                                    <?php
-                                }
-                                else
-                                {
-                                    ?>
-                                    <form style="display:inline-block" method="post" action="/server/privilege.php">
-                                        <input type="hidden" name="email" value="<?php echo $value; ?>" />
-                                        <input type="submit" name="unban" class="btn btn-success" value="Разбан" />
-                                    </form>
-                                    <?php
-                                    
-                                }
-                                if($row['root']==1)
-                                {
-                                    ?>
-                                    <form style="display:inline-block" method="post" action="/server/privilege.php">
-                                        <input type="hidden" name="email" value="<?php echo $value; ?>" />
-                                        <input type="submit" name="set_user" class="btn btn-secondary" value="Сделать пользователем" />
-                                    </form>
-                                    <?php
-                                }
-                                else
-                                {
-                                    ?>
-                                    <form style="display:inline-block" method="post" action="/server/privilege.php">
-                                        <input type="hidden" name="email" value="<?php echo $value; ?>" />
-                                        <input type="submit" name="set_admin" class="btn btn-info" value="Сделать админом" />
-                                    </form>
-                                    <?php
-                                }
-                            }
-                            else
-                            {
-                                echo 'Это вы!';
-                            }
-                            ?>
-                        </div>
-                    </div>
-                    <?php
-                    }
+                    $result = $db->query("SELECT * FROM `users_attribute` WHERE `root`=0 OR `email` LIKE '%$search%' OR `login` LIKE '%$search%' ");
                 }
-                elseif($_SESSION['search']=="Пользователь" or $_SESSION['search']=="пользователь" or $_SESSION['search']=="ПОЛЬЗОВАТЕЛЬ")
+                elseif($search=="забанен")
                 {
-                    $search=$_SESSION['search'];
-                    $result = $db->query('SELECT * FROM `users_attribute` WHERE `root`=2 OR `email` = "Пользователь" OR `email` = "пользователь" OR `email` = "ПОЛЬЗОВАТЕЛЬ" OR `login` = "Пользователь" OR `login` = "пользователь" OR `login` = "ПОЛЬЗОВАТЕЛЬ" ');
-                    while($row = $result->fetch_assoc())
-                    {
-                    $value=$row['email'];
-                    ?>
-                    <div class="row mt-4 vertical-center mb-1">
-                        <div class="col">
-                            <?php
-                            if ($row['img'] == '')
-                            {
-                            ?>
-                                <img src="../img/upload_def_icon.jpg" class="user-img-min rounded-circle img-thumbnail">
-                            <?php
-                            }
-                            else
-                            {
-                            ?>
-                                <img src="../<?php echo $row['img']; ?>" class="user-img-min rounded-circle img-thumbnail">
-                            <?php
-                            }
-                            ?>
-                            <!-- <img class="rounded-circle img-thumbnail" src="../img/upload_def_icon.jpg" width="45"> -->
-                            <?php print $row['login'] ?>
-                        </div>
-                        <div class="col">
-                            <?php print $row['email'] ?>
-                        </div>
-                        <div class="col">
-                            <?php
-                            if ($row['root']==1)
-                            {
-                                echo '<h6 style="color:#0dcaf0;">Админ</h6>';
-                            }
-                            elseif($row['root']==0)
-                            {
-                                echo '<h6 style="color:#6c757d;">Пользователь</h6>';
-                            }
-                            else
-                            {
-                                echo '<h6 style="color:#dc3545;">Забанен</h6>';
-                            }
-                            ?>
-                        </div>
-                        <div class="col">
-                            <?php
-                            if($_SESSION['email']!=$row['email'])
-                            {
-                                if($row['root']==1 or $row['root']==0)
-                                {
-                                    ?>
-                                    <form style="display:inline-block" method="post" action="/server/privilege.php">
-                                        <input type="hidden" name="email" value="<?php echo $value; ?>" />
-                                        <input type="submit" name="ban" class="btn btn-danger" value="Бан" />
-                                    </form>
-                                    <?php
-                                }
-                                else
-                                {
-                                    ?>
-                                    <form style="display:inline-block" method="post" action="/server/privilege.php">
-                                        <input type="hidden" name="email" value="<?php echo $value; ?>" />
-                                        <input type="submit" name="unban" class="btn btn-success" value="Разбан" />
-                                    </form>
-                                    <?php
-                                    
-                                }
-                                if($row['root']==1)
-                                {
-                                    ?>
-                                    <form style="display:inline-block" method="post" action="/server/privilege.php">
-                                        <input type="hidden" name="email" value="<?php echo $value; ?>" />
-                                        <input type="submit" name="set_user" class="btn btn-secondary" value="Сделать пользователем" />
-                                    </form>
-                                    <?php
-                                }
-                                else
-                                {
-                                    ?>
-                                    <form style="display:inline-block" method="post" action="/server/privilege.php">
-                                        <input type="hidden" name="email" value="<?php echo $value; ?>" />
-                                        <input type="submit" name="set_admin" class="btn btn-info" value="Сделать админом" />
-                                    </form>
-                                    <?php
-                                }
-                            }
-                            else
-                            {
-                                echo 'Это вы!';
-                            }
-                            ?>
-                        </div>
-                    </div>
-                    <?php
-                    }
+                    $result = $db->query("SELECT * FROM `users_attribute` WHERE `root`=2 OR `email` LIKE '%$search%' OR `login` LIKE '%$search%' ");
                 }
                 else
                 {
-                    $search=$_SESSION['search'];
-                    $result = $db->query("SELECT * FROM `users_attribute` WHERE `email`= '$search' OR `login`='$search'");
-                    while($row = $result->fetch_assoc())
-                    {
-                    $value=$row['email'];
-                    ?>
-                    <div class="row mt-4 vertical-center mb-1">
-                        <div class="col">
-                            <?php
-                            if ($row['img'] == '')
-                            {
-                            ?>
-                                <img src="../img/upload_def_icon.jpg" class="user-img-min rounded-circle img-thumbnail">
-                            <?php
-                            }
-                            else
-                            {
-                            ?>
-                                <img src="../<?php echo $row['img']; ?>" class="user-img-min rounded-circle img-thumbnail">
-                            <?php
-                            }
-                            ?>
-                            <!-- <img class="rounded-circle img-thumbnail" src="../img/upload_def_icon.jpg" width="45"> -->
-                            <?php print $row['login'] ?>
-                        </div>
-                        <div class="col">
-                            <?php print $row['email'] ?>
-                        </div>
-                        <div class="col">
-                            <?php
-                            if ($row['root']==1)
-                            {
-                                echo '<h6 style="color:#0dcaf0;">Админ</h6>';
-                            }
-                            elseif($row['root']==0)
-                            {
-                                echo '<h6 style="color:#6c757d;">Пользователь</h6>';
-                            }
-                            else
-                            {
-                                echo '<h6 style="color:#dc3545;">Забанен</h6>';
-                            }
-                            ?>
-                        </div>
-                        <div class="col">
-                            <?php
-                            if($_SESSION['email']!=$row['email'])
-                            {
-                                if($row['root']==1 or $row['root']==0)
-                                {
-                                    ?>
-                                    <form style="display:inline-block" method="post" action="/server/privilege.php">
-                                        <input type="hidden" name="email" value="<?php echo $value; ?>" />
-                                        <input type="submit" name="ban" class="btn btn-danger" value="Бан" />
-                                    </form>
-                                    <?php
-                                }
-                                else
-                                {
-                                    ?>
-                                    <form style="display:inline-block" method="post" action="/server/privilege.php">
-                                        <input type="hidden" name="email" value="<?php echo $value; ?>" />
-                                        <input type="submit" name="unban" class="btn btn-success" value="Разбан" />
-                                    </form>
-                                    <?php
-                                    
-                                }
-                                if($row['root']==1)
-                                {
-                                    ?>
-                                    <form style="display:inline-block" method="post" action="/server/privilege.php">
-                                        <input type="hidden" name="email" value="<?php echo $value; ?>" />
-                                        <input type="submit" name="set_user" class="btn btn-secondary" value="Сделать пользователем" />
-                                    </form>
-                                    <?php
-                                }
-                                else
-                                {
-                                    ?>
-                                    <form style="display:inline-block" method="post" action="/server/privilege.php">
-                                        <input type="hidden" name="email" value="<?php echo $value; ?>" />
-                                        <input type="submit" name="set_admin" class="btn btn-info" value="Сделать админом" />
-                                    </form>
-                                    <?php
-                                }
-                            }
-                            else
-                            {
-                                echo 'Это вы!';
-                            }
-                            ?>
-                        </div>
-                    </div>
-                    <?php
-                    }
+                    $result = $db->query("SELECT * FROM `users_attribute` WHERE `email` LIKE '%$search%' OR `login` LIKE '%$search%' ");
                 }
+
+
+                while($row = $result->fetch_assoc())
+                {
+                $value=$row['email'];
+                ?>
+                <div class="row mt-4 vertical-center mb-1">
+                    <div class="col">
+                        <?php
+                        if ($row['img'] == '')
+                        {
+                        ?>
+                            <img src="../img/upload_def_icon.jpg" class="user-img-min rounded-circle img-thumbnail">
+                        <?php
+                        }
+                        else
+                        {
+                        ?>
+                            <img src="../<?php echo $row['img']; ?>" class="user-img-min rounded-circle img-thumbnail">
+                        <?php
+                        }
+                        ?>
+                        <!-- <img class="rounded-circle img-thumbnail" src="../img/upload_def_icon.jpg" width="45"> -->
+                        <?php print $row['login'] ?>
+                    </div>
+                    <div class="col">
+                        <?php print $row['email'] ?>
+                    </div>
+                    <div class="col">
+                        <?php
+                        if ($row['root']==1)
+                        {
+                            echo '<h6 style="color:#0dcaf0;">Админ</h6>';
+                        }
+                        elseif($row['root']==0)
+                        {
+                            echo '<h6 style="color:#6c757d;">Пользователь</h6>';
+                        }
+                        else
+                        {
+                            echo '<h6 style="color:#dc3545;">Забанен</h6>';
+                        }
+                        ?>
+                    </div>
+                    <div class="col">
+                        <?php
+                        if($_SESSION['email']!=$row['email'])
+                        {
+                            if($row['root']==1 or $row['root']==0)
+                            {
+                                ?>
+                                <form style="display:inline-block" method="post" action="/server/privilege.php">
+                                    <input type="hidden" name="email" value="<?php echo $value; ?>" />
+                                    <input type="submit" name="ban" class="btn btn-danger" value="Бан" />
+                                </form>
+                                <?php
+                            }
+                            else
+                            {
+                                ?>
+                                <form style="display:inline-block" method="post" action="/server/privilege.php">
+                                    <input type="hidden" name="email" value="<?php echo $value; ?>" />
+                                    <input type="submit" name="unban" class="btn btn-success" value="Разбан" />
+                                </form>
+                                <?php
+                                
+                            }
+                            if($row['root']==1)
+                            {
+                                ?>
+                                <form style="display:inline-block" method="post" action="/server/privilege.php">
+                                    <input type="hidden" name="email" value="<?php echo $value; ?>" />
+                                    <input type="submit" name="set_user" class="btn btn-secondary" value="Сделать пользователем" />
+                                </form>
+                                <?php
+                            }
+                            else
+                            {
+                                ?>
+                                <form style="display:inline-block" method="post" action="/server/privilege.php">
+                                    <input type="hidden" name="email" value="<?php echo $value; ?>" />
+                                    <input type="submit" name="set_admin" class="btn btn-info" value="Сделать админом" />
+                                </form>
+                                <?php
+                            }
+                        }
+                        else
+                        {
+                            echo 'Это вы!';
+                        }
+                        ?>
+                    </div>
+                </div>
+                <?php
+                }
+                
+                
                 ?>
                 <!-- в цикл этот div -->
             </div>

@@ -12,7 +12,7 @@ if(isset($_SESSION['id']))
         if (isset($_POST['new_login'])) { $new_login = $_POST['new_login']; if ($new_login == '') { unset($new_login);} } //заносим введенный пользователем логин в переменную $login, если он пустой, то уничтожаем переменную
 
         //print $email." ".$password;
-        if ($new_login==$_SESSION['login'])
+        if (mb_strtolower($new_login)==mb_strtolower($_SESSION['login']))
         {
 
             header("Location: /personal_block/account_set.php#popup1");
