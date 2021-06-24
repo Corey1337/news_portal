@@ -18,15 +18,16 @@
         <p class="text-center w-responsive mx-auto ">У вас есть какие-то вопросы? Хотите стать нашим редактором, разместить рекламу ну или просто поддержать копейкой наш проект? Не стесняйтесь и пишите нам на почту. Мы постораемся как можно быстрее помочь вам!</p>
         <div class="row">
             <div class="col">
-            <img class="mx-auto d-block" src="img/VK_logo.png" width="100px">
-                <a class="text-decoration-none text-dark" href="https://vk.com/id240873722" target="_blank"><p class="mt-4 text-center">frontend</p></a>
-                <a class="text-decoration-none text-dark" href="https://vk.com/dio_brando_karterr" target="_blank"><p class="mt-3 text-center">backend</p></a>
+            <img class="mx-auto d-block" src="sys_img/VK_logo.png" width="100px">
+                <a class="text-decoration-none text-dark" href="https://vk.com/id240873722" target="_blank"><p class="mt-4 text-center">frontend developer</p></a>
+                <a class="text-decoration-none text-dark" href="https://vk.com/dio_brando_karterr" target="_blank"><p class="mt-3 text-center">backend developer 1</p></a>
+                <a class="text-decoration-none text-dark" href="https://vk.com/vroslyakov2002" target="_blank"><p class="mt-3 text-center">backend developer 2</p></a>  
             </div>
             <div class="col text-center">
-                <img class="mx-auto d-block" src="img/loc.png" width="100px">
+                <img class="mx-auto d-block" src="sys_img/loc.png" width="100px">
                 <a class="text-decoration-none text-dark" href="https://goo.gl/maps/cENSkVfmjE8VdcmJA" target="_blank"><p class="mt-1 text-center" onclick="copyElementText('myInp')">ул. Шепеткова, д. 14, Владивосток, Приморский край, 690013</p></a>            </div>
             <div class="col text-center">
-                <img class="mx-auto d-block" src="img/mail.png" width="100px">
+                <img class="mx-auto d-block" src="sys_img/mail.png" width="100px">
                 <p id="myInp" class="mt-4 text-center" onclick="copyElementText('myInp')">onlinesupport@info.newstoday.com</p>
                 <h6 class="h6 text-secondary" style="font-size: 10px; margin-top: -3%!important;">Нажмите, чтобы скопировать</h6>
             </div>

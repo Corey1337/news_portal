@@ -1,8 +1,8 @@
 
 <?php 
- ini_set('error_reporting', E_ALL);
- ini_set('display_errors', 1);
- ini_set('display_startup_errors', 1);
+//  ini_set('error_reporting', E_ALL);
+//  ini_set('display_errors', 1);
+//  ini_set('display_startup_errors', 1);
 session_start();
 require "config.php";
     if($_SESSION['root']==1 && isset($_SESSION['id']))
@@ -19,7 +19,7 @@ require "config.php";
         <title>News Today</title>
     </head>
     <body>
-        <?php require "C:/MAMP/htdocs/blocks/header.php" ?>
+        <?php require "../blocks/header.php" ?>
         <?php  
                 global $db;
                 ini_set('error_reporting', E_ALL);
@@ -41,7 +41,7 @@ require "config.php";
             <form action="change_news.php "enctype="multipart/form-data" method="post">
                     <div class="form-group">
                         <label for="article-pic">Картинка статьи:</label>
-                        <img   src="../news_img/<?php print_r($news['img_id']);?>.jpg"> 
+                        <img src="../news_img/<?php print_r($news['img_id']);?>.jpg" width="20%"> 
                     <!--     <div>
                             <input type="file"  name="image_t"> пока не будем редачить фото
                             При выборе файла выбранная картинка должна появиться вместо деф пикчи 
@@ -69,7 +69,7 @@ require "config.php";
                 
             </form>
         </div>
-        <?php require "C:/MAMP/htdocs/blocks/footer.php" ?>
+        <?php require "../blocks/footer.php" ?>
     </body>
     </html>   
 
