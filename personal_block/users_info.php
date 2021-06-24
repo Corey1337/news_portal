@@ -72,7 +72,6 @@ if($_SESSION['root']==1)
                     $result = $db->query("SELECT * FROM `users_attribute` WHERE `email` LIKE '%$search%' OR `login` LIKE '%$search%' ");
                 }
 
-                $check=FALSE;
                 while($row = $result->fetch_assoc())
                 {
                 $value=$row['email'];
@@ -101,7 +100,6 @@ if($_SESSION['root']==1)
                     </div>
                     <div class="col">
                         <?php
-                        $check=TRUE;
                         if ($row['root']==1)
                         {
                             echo '<h6 style="color:#0dcaf0;">Админ</h6>';
@@ -166,10 +164,6 @@ if($_SESSION['root']==1)
                     </div>
                 </div>
                 <?php
-                }
-                if($check==0)
-                {
-                    header("Location: #popup10");
                 }
                 
                 ?>
