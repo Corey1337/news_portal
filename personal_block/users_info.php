@@ -167,10 +167,10 @@ if($_SESSION['root']==1)
                 </div>
                 <?php
                 }
-                if($check==0)
-                {
-                    header("Location: #popup10");
-                }
+                // if($check==0)
+                // {
+                //     header("Location: #popup10");
+                // }
                 
                 ?>
                 <!-- в цикл этот div -->
