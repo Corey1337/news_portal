@@ -21,7 +21,13 @@
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
     global $db;
-    $d=  $_POST["id_n"];
+    if (isset($_GET['id_n'])){
+        $d=  $_GET["id_n"];
+        $_SESSION['ARTICLES_DATA']=$d;
+    }
+    else{
+        $d=$_SESSION['ARTICLES_DATA'];
+    }
     $query=mysqli_query($db, "SELECT * FROM `news` WHERE `id`='$d' ");
     $news=mysqli_fetch_assoc($query);
     $tittle=$news['tittle'];
@@ -29,7 +35,8 @@
     $date=$news['date'];
     $full_text=$news['full_text'];
     $name_users=$news['name_users'];
-    $img_id=$news['img_id']
+    $img_id=$news['img_id'];
+    
     ?>
     
     <div class="container mt-5">
@@ -58,7 +65,7 @@
             {
             ?><form action="server/article_change.php" method="post">
             <button id="id_n_c"  name="id_n_c" value=<?php echo $d;?>  class="btn btn-outline-info">
-            <img src="news_img/pen.png" width="40">
+            <img src="sys_img/pen.png" width="40">
             </form>
             
         </button>
@@ -95,7 +102,7 @@
                  global $db;
                 $res = $db->query("SELECT count(*) FROM  comments WHERE id_news=$d");
                         $row = $res->fetch_row();
-                        $r=mysqli_query($db,"SELECT * FROM `comments`WHERE id_news=$d");       ?> 
+                        $r=mysqli_query($db,"SELECT * FROM `comments`WHERE id_news=$d ORDER BY id DESC");       ?> 
                 <h3>Комментариев: <?php echo $row[0]; ?></h3>
                 <!-- количество коментов, можно есчо просто удалить -->
                <?php while ($com= mysqli_fetch_assoc($r)) { 
@@ -104,10 +111,15 @@
                ?>
                <!-- COMMENT 1 - START -->
                 <div class="media">
-                    <a class="pull-left"><img class="rounded-circle img-thumbnail media-object" src="<?php print_r($author['img']); ?>" alt=""></a>
+                    <a class="pull-left"><img class="rounded-circle img-thumbnail media-object"
+                     src="<?php    
+                    $indd=rand(1,8);
+                    $gg='https://bootdey.com/img/Content/avatar/avatar'.$indd.'.png';
+                     echo $gg;
+                     ?>" alt=""></a>
                     <!-- АВА ПОЛЬЗОВАТЕЛЯ -->
                     <div class="media-body">
-                        <h4 class="media-heading"><?php print_r($author['login']); ?></h4>
+                        <h4 class="media-heading"><?php print_r($com['name_users']); ?></h4>
                         <p><?php print_r($com['text']); ?></p>
                         <!-- текст комента -->
                         <ul class="list-unstyled list-inline media-detail pull-left">
