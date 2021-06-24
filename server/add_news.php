@@ -23,7 +23,9 @@
               $uploadfile = "$uploaddir$apend"; 
 
          echo  $uploadfile;
-              if (move_uploaded_file($_FILES['image_t']['tmp_name'], $uploadfile)) {
+              if (move_uploaded_file($_FILES['image_t']['tmp_name'], $uploadfile)) 
+              {
+                  // header("Location: /index.php")
                   echo "Файл корректен и был успешно загружен.\n";
                   return TRUE;
               } else {
@@ -40,6 +42,7 @@
                 ')";
                 $res=mysqli_query($db,$sql);
                 if ($res==TRUE) {
+                  header("Location: /index.php");
                   echo "<h1>";
                   echo "Данные добавлены";
                   echo "</h1>";
