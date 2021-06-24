@@ -127,6 +127,9 @@ body{margin-top:20px;}
 
 #comments .media img {
 	max-width:100px;
+	max-height: 100px;
+	width: 100px !important;
+	height: 100px !important;
 }
 
 #comments .media h4 {
