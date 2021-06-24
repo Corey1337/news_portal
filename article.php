@@ -88,40 +88,33 @@
                         </div>  	   
                     </fieldset>
                 </form>
-                
-                <h3>2 Коментария</h3>
+                <?php  require "server/config.php";
+                 global $db;
+                $res = $db->query("SELECT count(*) FROM comments");
+                        $row = $res->fetch_row();
+                        $r=mysqli_query($db,"SELECT * FROM `comments`");       ?> 
+                <h3>Комментариев: <?php echo $row[0]; ?></h3>
                 <!-- количество коментов, можно есчо просто удалить -->
-
-                <!-- COMMENT 1 - START -->
+               <?php while ($com= mysqli_fetch_assoc($r)) { 
+                            $result_c=mysqli_query($db,"SELECT * FROM `users_attribute` WHERE login=$name_users");
+                            $author=mysqli_fetch_assoc($result_c);    
+               ?>
+               <!-- COMMENT 1 - START -->
                 <div class="media">
-                    <a class="pull-left"><img class="rounded-circle img-thumbnail media-object" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt=""></a>
+                    <a class="pull-left"><img class="rounded-circle img-thumbnail media-object" src="<?php print_r($author['img']); ?>" alt=""></a>
                     <!-- АВА ПОЛЬЗОВАТЕЛЯ -->
                     <div class="media-body">
-                        <h4 class="media-heading">John Doe</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <h4 class="media-heading"><?php print_r($author['login']); ?></h4>
+                        <p><?php print_r($com['text']); ?></p>
                         <!-- текст комента -->
                         <ul class="list-unstyled list-inline media-detail pull-left">
-                            <li><i class="fa fa-calendar"></i>27/02/2014</li>
+                            <li><i class="fa fa-calendar"></i><?php print(date('d.m.Y',strtotime($com['date']))); ?></li>
                             <!-- дата камента -->
                         </ul>
                     </div>
                 </div>
                 <!-- COMMENT 1 - END -->
-                
-                <!-- COMMENT 2 - START -->
-                <!-- аналогично 1му коменту он тут просто шобы был -->
-                <div class="media">
-                    <a class="pull-left"><img class="rounded-circle img-thumbnail media-object" src="https://bootdey.com/img/Content/avatar/avatar2.png" alt=""></a>
-                    <div class="media-body">
-                        <h4 class="media-heading">John Doe</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        <ul class="list-unstyled list-inline media-detail pull-left">
-                            <li><i class="fa fa-calendar"></i>27/02/2014</li>
-                            <!--  -->
-                        </ul>
-                    </div>
-                </div>
-                <!-- COMMENT 2 - END -->
+                <?php }?>
             
             </div>
         </div>
