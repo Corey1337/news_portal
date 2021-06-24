@@ -9,18 +9,17 @@
   global $db;
   $id_c=$_POST["id_c"];
   $full_text=$_POST["message"];
-  $login=isset($_SESSION['login']);
- $log=print_r($login);
+  session_start();
+  $login=$_SESSION['login'];
 global $db;
+if (! $login){
+  $login="Гость";
+}
 $sql="INSERT INTO `comments` (`name_users`,`id_news`,`text`,`date`) 
-                VALUES ('$log','$id_c','$full_text',now())";
+                VALUES ('$login','$id_c','$full_text',now())";
                 $res=mysqli_query($db,$sql);
                 if ($res==TRUE) {
-                  header("Location: /index.php");
-                  echo "<h1>";
-                  echo "Данные добавлены";
-                  echo "</h1>";
-                  header('Location: /index.php');
+                  header("Location: /article.php");
               }  
                   else {
                     echo "<h1>";
