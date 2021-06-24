@@ -74,25 +74,28 @@
     <div class="container">   
     	<div class="row">
             <div class="col-sm-8">   
-                <form>
+            <form action="server/add_com.php"method="post"> 
                 	<h3 class="pull-left">Новый коментарий</h3>
-                	<button type="submit" class="btn btn-primary pull-right">Отправить</button>
+                
+                	<button type="submit" class="btn btn-primary pull-right"  id="id_c"  name="id_c"
+                     value=<?php print_r($d); ?> >Отправить</button>
                     <fieldset>
                         <div class="row">
                             <div class="col-sm-3 col-lg-2 hidden-xs">
                             	<img class="media-object img-responsive rounded-circle img-thumbnail" src="https://bootdey.com/img/Content/avatar/avatar1.png" width="100">
                             </div>
                             <div class="form-group col-xs-12 col-sm-9 col-lg-10">
-                                <textarea class="form-control" id="message" placeholder="Ваше сообщение" required=""></textarea>
+                                
+                                <textarea class="form-control" id="message" name="message" placeholder="Ваше сообщение" required=""></textarea>
                             </div>
                         </div>  	   
                     </fieldset>
                 </form>
                 <?php  require "server/config.php";
                  global $db;
-                $res = $db->query("SELECT count(*) FROM comments");
+                $res = $db->query("SELECT count(*) FROM  comments WHERE id_news=$d");
                         $row = $res->fetch_row();
-                        $r=mysqli_query($db,"SELECT * FROM `comments`");       ?> 
+                        $r=mysqli_query($db,"SELECT * FROM `comments`WHERE id_news=$d");       ?> 
                 <h3>Комментариев: <?php echo $row[0]; ?></h3>
                 <!-- количество коментов, можно есчо просто удалить -->
                <?php while ($com= mysqli_fetch_assoc($r)) { 
