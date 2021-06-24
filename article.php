@@ -31,11 +31,12 @@
     $name_users=$news['name_users'];
     $img_id=$news['img_id']
     ?>
+    
     <div class="container mt-5">
         <h3 class="text-center newnews mb-5"><?php echo $tittle?></h3>
         <div class="" style="margin-left: 1%;">
             <h6 class="mt-2">Автор:<?php echo $name_users?></h6> 
-            <h6 class="float-right">Дата публикации:<?php echo $date?></h6>
+            <h6 class="float-right">Дата публикации:<?php print(date('d.m.Y',strtotime($date))); ?></h6>
             <!-- ТУТ ГОД И АВТОРА НОРМ ВЫВОДИТЬ -->
         </div>
 
