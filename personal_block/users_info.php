@@ -169,7 +169,7 @@ if($_SESSION['root']==1)
                 }
                 if($check==0)
                 {
-                    echo('ПАШОЛ НАХУЙ');
+                    header("Location: #popup10");
                 }
                 
                 ?>
@@ -180,6 +180,7 @@ if($_SESSION['root']==1)
 
         <?php require "../blocks/footer-min.php" ?>
         <?php require "pa_popups/support_popup.php"?>
+        <?php require "pa_papups/users_not_search_popup.php"?>
     </body>
     </html>
     <?php
