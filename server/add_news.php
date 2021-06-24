@@ -16,7 +16,7 @@
   $img_id = $row[0];
   $img_id=$img_id+1;  
   function chk($id_id){
-              $uploaddir = 'C:/MAMP/htdocs/news_img/';
+              $uploaddir = '../news_img/';
               // это папка, в которую будет загружаться картинка
               $apend=$id_id.".jpg"; 
               // это имя, которое будет присвоенно изображению 
