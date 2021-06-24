@@ -19,7 +19,7 @@
                   echo "<h1>";
                   echo "Данные отредактированны";
                   echo "</h1>";
-                //  header('Location: /index.php');
+                  header('Location: /index.php');
               }  
    else {
                     echo "<h1>";
