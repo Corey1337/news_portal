@@ -94,6 +94,7 @@
                     <fieldset>
                         <div class="row">
                             <div class="col-sm-3 col-lg-2 hidden-xs">
+
                                 <?php 
                                 if($_SESSION['img']=='')
                                 {
