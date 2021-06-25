@@ -69,7 +69,7 @@
                   echo "<h1>";
                   echo "Данные добавлены";
                   echo "</h1>";
-                //  header('Location: /index.php');
+                  header('Location: /index.php');
               }  
                   else {
                     echo "<h1>";
