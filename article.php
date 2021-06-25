@@ -89,7 +89,7 @@
                     <fieldset>
                         <div class="row">
                             <div class="col-sm-3 col-lg-2 hidden-xs">
-                            	<img class="media-object img-responsive rounded-circle img-thumbnail" src="https://bootdey.com/img/Content/avatar/avatar1.png" width="100">
+                            	<img src="../<?php echo $_SESSION['img']; ?>" class="user-img rounded-circle img-thumbnail" width="200">
                             </div>
                             <div class="form-group col-xs-12 col-sm-9 col-lg-10">
                                 
@@ -111,12 +111,7 @@
                ?>
                <!-- COMMENT 1 - START -->
                 <div class="media">
-                    <a class="pull-left"><img class="rounded-circle img-thumbnail media-object"
-                     src="<?php    
-                    $indd=rand(1,8);
-                    $gg='https://bootdey.com/img/Content/avatar/avatar'.$indd.'.png';
-                     echo $gg;
-                     ?>" alt=""></a>
+                    <a class="pull-left"><img src="../<?php echo $_SESSION['img']; ?>" class="user-img rounded-circle img-thumbnail" width="200"></a>
                     <!-- АВА ПОЛЬЗОВАТЕЛЯ -->
                     <div class="media-body">
                         <h4 class="media-heading"><?php print_r($com['name_users']); ?></h4>
