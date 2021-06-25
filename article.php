@@ -89,7 +89,20 @@
                     <fieldset>
                         <div class="row">
                             <div class="col-sm-3 col-lg-2 hidden-xs">
-                            	<img src="../<?php echo $_SESSION['img']; ?>" class="user-img rounded-circle img-thumbnail" width="200">
+                                <?php 
+                                if($_SESSION['img']=='')
+                                {
+                                    ?>
+                            	    <img src="../img/upload_def_icon.jpg" class="user-img-com rounded-circle img-thumbnail">
+                                    <?php
+                                }
+                                else
+                                {
+                                    ?>
+                                    <img src="../<?php echo $_SESSION['img']; ?>" class="user-img-com rounded-circle img-thumbnail">
+                                    <?php
+                                }
+                                ?>
                             </div>
                             <div class="form-group col-xs-12 col-sm-9 col-lg-10">
                                 
@@ -111,7 +124,7 @@
                ?>
                <!-- COMMENT 1 - START -->
                 <div class="media">
-                    <a class="pull-left"><img src="../<?php echo $_SESSION['img']; ?>" class="user-img rounded-circle img-thumbnail" width="200"></a>
+                    <a class="pull-left"><img src="../<?php echo $author['img']; ?>" class="user-img rounded-circle img-thumbnail" width="200"></a>
                     <!-- АВА ПОЛЬЗОВАТЕЛЯ -->
                     <div class="media-body">
                         <h4 class="media-heading"><?php print_r($com['name_users']); ?></h4>
