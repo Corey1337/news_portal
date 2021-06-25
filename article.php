@@ -77,11 +77,16 @@
         
     <!-- Прикрутить к этой кнопке редактор текста и сделать недоступной для простолюдинов -->
     
+
     <section class="content-item mt-4" id="comments">
     <div class="container">   
     	<div class="row">
-            <div class="col-sm-8">   
-            <form action="server/add_com.php"method="post"> 
+            <div class="col-sm-8"> 
+                <?php
+                if(isset($_SESSION['id']) and ($_SESSION['id']==1 or $_SESSION['id']==0))
+                {
+                ?>      
+                <form action="server/add_com.php"method="post"> 
                 	<h3 class="pull-left">Новый коментарий</h3>
                 
                 	<button type="submit" class="btn btn-primary pull-right"  id="id_c"  name="id_c"
@@ -111,6 +116,9 @@
                         </div>  	   
                     </fieldset>
                 </form>
+                <?php
+                }
+                ?>
                 <?php  require "server/config.php";
                  global $db;
                 $res = $db->query("SELECT count(*) FROM  comments WHERE id_news=$d");
