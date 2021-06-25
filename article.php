@@ -89,7 +89,7 @@
                     <fieldset>
                         <div class="row">
                             <div class="col-sm-3 col-lg-2 hidden-xs">
-                            	<img src="../<?php echo $_SESSION['img']; ?>" class="user-img rounded-circle img-thumbnail" width="200">
+                            	<img src="../<?php echo $_SESSION['img']; ?>" class="user-img-com rounded-circle img-thumbnail">
                             </div>
                             <div class="form-group col-xs-12 col-sm-9 col-lg-10">
                                 
