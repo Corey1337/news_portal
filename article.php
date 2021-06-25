@@ -83,7 +83,7 @@
     	<div class="row">
             <div class="col-sm-8"> 
                 <?php
-                if(isset($_SESSION['id']) and ($_SESSION['id']==1 or $_SESSION['id']==0))
+                if(isset($_SESSION['id']) and $_SESSION['root']!=2)
                 {
                 ?>      
                 <form action="server/add_com.php"method="post"> 
@@ -130,7 +130,7 @@
                         $result_c=mysqli_query($db,"SELECT * FROM `users_attribute` WHERE login=$name_users");
                         $author=mysqli_fetch_assoc($result_c);
                         $comment_img_search = $com['name_users'];
-                        $res_img=mysqli_query($db,"SELECT * FROM `users_attribute` WHERE login=$comment_img_search");
+                        $res_img=mysqli_query($db,"SELECT * FROM `users_attribute` WHERE login=$comment_img_search ");
                         $img_user=mysqli_fetch_assoc($res_img);
                 ?>
                <!-- COMMENT 1 - START -->
