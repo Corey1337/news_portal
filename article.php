@@ -134,32 +134,39 @@
                         $img_user=mysqli_fetch_assoc($res_img);
                 ?>
                <!-- COMMENT 1 - START -->
-                <div class="media">
-                    <?php
-                    if($img_user['img']=='')
-                    {
-                        ?>
-                        <a class="pull-left"><img src="../img/upload_def_icon.jpg" class="user-img rounded-circle img-thumbnail" width="200"></a>
+               <?php
+               if($img_user['root']!=2)
+               {
+                   ?>
+                    <div class="media">
                         <?php
-                    }
-                    else
-                    {
+                        if($img_user['img']=='')
+                        {
+                            ?>
+                            <a class="pull-left"><img src="../img/upload_def_icon.jpg" class="user-img rounded-circle img-thumbnail" width="200"></a>
+                            <?php
+                        }
+                        else
+                        {
+                            ?>
+                            <a class="pull-left"><img src="../<?php echo $img_user['img']; ?>" class="user-img rounded-circle img-thumbnail" width="200"></a>
+                            <?php
+                        }
                         ?>
-                        <a class="pull-left"><img src="../<?php echo $img_user['img']; ?>" class="user-img rounded-circle img-thumbnail" width="200"></a>
-                        <?php
-                    }
-                    ?>
-                    <!-- АВА ПОЛЬЗОВАТЕЛЯ -->
-                    <div class="media-body">
-                        <h4 class="media-heading"><?php print_r($com['name_users']); ?></h4>
-                        <p><?php print_r($com['text']); ?></p>
-                        <!-- текст комента -->
-                        <ul class="list-unstyled list-inline media-detail pull-left">
-                            <li><i class="fa fa-calendar"></i><?php print(date('d.m.Y',strtotime($com['date']))); ?></li>
-                            <!-- дата камента -->
-                        </ul>
+                        <!-- АВА ПОЛЬЗОВАТЕЛЯ -->
+                        <div class="media-body">
+                            <h4 class="media-heading"><?php print_r($com['name_users']); ?></h4>
+                            <p><?php print_r($com['text']); ?></p>
+                            <!-- текст комента -->
+                            <ul class="list-unstyled list-inline media-detail pull-left">
+                                <li><i class="fa fa-calendar"></i><?php print(date('d.m.Y',strtotime($com['date']))); ?></li>
+                                <!-- дата камента -->
+                            </ul>
+                        </div>
                     </div>
-                </div>
+                <?php
+                }
+                ?>
                 <!-- COMMENT 1 - END -->
                 <?php }?>
             
