@@ -125,7 +125,7 @@
                 $res = $db->query("SELECT count(*) FROM  comments WHERE id_news=$d");
                         $row = $res->fetch_row();
                         $r=mysqli_query($db,"SELECT * FROM `comments`WHERE id_news=$d ORDER BY id DESC");       ?> 
-                <h3>Комментариев: <?php echo $row[0]; ?></h3>
+                <h3>Комментарии:</h3>
                 <!-- количество коментов, можно есчо просто удалить -->
                 <?php while ($com= mysqli_fetch_assoc($r)) { 
                         $result_c=mysqli_query($db,"SELECT * FROM `users_attribute` WHERE login=$name_users");
