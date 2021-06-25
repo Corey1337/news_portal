@@ -18,8 +18,8 @@
     <?php  
     require "server/config.php" ;
     ini_set('error_reporting', E_ALL);
-    ini_set('display_errors', 1);
-    ini_set('display_startup_errors', 1);
+    ini_set('display_errors', 0);
+    ini_set('display_startup_errors', 0);
     global $db;
     if (isset($_GET['id_n'])){
         $d=  $_GET["id_n"];
@@ -118,13 +118,29 @@
                         $r=mysqli_query($db,"SELECT * FROM `comments`WHERE id_news=$d ORDER BY id DESC");       ?> 
                 <h3>Комментариев: <?php echo $row[0]; ?></h3>
                 <!-- количество коментов, можно есчо просто удалить -->
-               <?php while ($com= mysqli_fetch_assoc($r)) { 
-                            $result_c=mysqli_query($db,"SELECT * FROM `users_attribute` WHERE login=$name_users");
-                            $author=mysqli_fetch_assoc($result_c);    
-               ?>
+                <?php while ($com= mysqli_fetch_assoc($r)) { 
+                        $result_c=mysqli_query($db,"SELECT * FROM `users_attribute` WHERE login=$name_users");
+                        $author=mysqli_fetch_assoc($result_c);
+                        $comment_img_search = $com['name_users'];
+                        $res_img=mysqli_query($db,"SELECT * FROM `users_attribute` WHERE login=$comment_img_search");
+                        $img_user=mysqli_fetch_assoc($res_img);
+                ?>
                <!-- COMMENT 1 - START -->
                 <div class="media">
-                    <a class="pull-left"><img src="../<?php echo $author['img']; ?>" class="user-img rounded-circle img-thumbnail" width="200"></a>
+                    <?php
+                    if($img_user['img']=='')
+                    {
+                        ?>
+                        <a class="pull-left"><img src="../img/upload_def_icon.jpg" class="user-img rounded-circle img-thumbnail" width="200"></a>
+                        <?php
+                    }
+                    else
+                    {
+                        ?>
+                        <a class="pull-left"><img src="../<?php echo $img_user['img']; ?>" class="user-img rounded-circle img-thumbnail" width="200"></a>
+                        <?php
+                    }
+                    ?>
                     <!-- АВА ПОЛЬЗОВАТЕЛЯ -->
                     <div class="media-body">
                         <h4 class="media-heading"><?php print_r($com['name_users']); ?></h4>
